@@ -3,7 +3,6 @@ import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class AnimalFrogYellow extends GameDecoration with ObjectCollision, TapGesture {
   AnimalFrogYellow(Vector2 position)
