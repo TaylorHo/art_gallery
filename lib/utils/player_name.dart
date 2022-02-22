@@ -23,3 +23,7 @@ void returnName(
     align: offset,
   );
 }
+
+void removeFollower(String name) {
+  FollowerWidget.remove(name);
+}

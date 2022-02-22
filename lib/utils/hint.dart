@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 void returnHint(
     {required BuildContext context,
     required GameComponent target,
-    String name = 'badge',
+    required String name,
     Offset offset = const Offset(12, 5)}) {
   return FollowerWidget.show(
     identify: name,
@@ -35,4 +35,8 @@ void returnHint(
     ),
     align: offset,
   );
+}
+
+void removeFollower(String name) {
+  FollowerWidget.remove(name);
 }
