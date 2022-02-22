@@ -32,11 +32,14 @@ class ExteriorMap extends StatelessWidget {
       joystick: Joystick(
         directional: JoystickDirectional(),
         keyboardConfig: KeyboardConfig(
-            enable: true,
-            keyboardDirectionalType: KeyboardDirectionalType.arrows),
+          enable: true,
+          keyboardDirectionalType: KeyboardDirectionalType.arrows,
+        ),
       ),
-      cameraConfig:
-          CameraConfig(moveOnlyMapArea: true, smoothCameraEnabled: true),
+      cameraConfig: CameraConfig(
+        moveOnlyMapArea: true,
+        smoothCameraEnabled: true,
+      ),
       player: CharacterJulia(Vector2(1880, 2200)),
       onReady: (gameReady) async {
         await Future.delayed(const Duration(seconds: 2), () {

@@ -1,5 +1,6 @@
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/main.dart';
+import 'package:art_gallery/pages/hall_map.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
@@ -17,15 +18,15 @@ class EnterMuseum extends GameDecoration with Sensor {
     if (!adviceShowed) {
       if (component is CharacterJulia) {
         FollowerWidget.removeAll();
+        adviceShowed = true;
 
         // pode entrar no museu
-        showDialog(
-            context: context,
-            builder: (context) {
-              return const AlertDialog(
-                  title: Text('Próximo Nível: Entrar no Museu'));
-            });
-        adviceShowed = true;
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (context) => const MuseumHallMap(),
+          ),
+          (route) => false,
+        );
       }
     }
   }
