@@ -20,7 +20,7 @@ class EnterMuseum extends GameDecoration with Sensor {
 
         Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
-            builder: (context) => const MuseumHallMap(),
+            builder: (context) => const MuseumHallMap(mapPositionInInit: true),
           ),
           (route) => false,
         );

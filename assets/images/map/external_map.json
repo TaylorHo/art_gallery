@@ -828,7 +828,7 @@
                 {
                  "height":16,
                  "id":82,
-                 "name":"taylor",
+                 "name":"taylor_1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -857,6 +857,17 @@
                  "width":126.666666666667,
                  "x":576.666666666667,
                  "y":47.3333333333333
+                }, 
+                {
+                 "height":16,
+                 "id":85,
+                 "name":"taylor_2",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":649,
+                 "y":80
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -865,7 +876,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":85,
+ "nextobjectid":86,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",

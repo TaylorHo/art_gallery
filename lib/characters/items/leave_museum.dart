@@ -1,6 +1,6 @@
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/main.dart';
-import 'package:art_gallery/pages/exterior_map_leave.dart';
+import 'package:art_gallery/pages/exterior_map.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class LeaveMuseum extends GameDecoration with Sensor {
 
         Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
-            builder: (context) => const ExteriorMapLeave(),
+            builder: (context) => const ExteriorMap(mapPositionInInit: false),
           ),
           (route) => false,
         );

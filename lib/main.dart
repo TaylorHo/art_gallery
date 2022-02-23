@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
       title: 'Julia\'s Art Gallery',
-      home: ExteriorMap(),
+      home: ExteriorMap(mapPositionInInit: true),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:art_gallery/characters/items/leave_museum.dart';
+import 'package:art_gallery/characters/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/taylor.dart';
 import 'package:art_gallery/main.dart';
@@ -6,7 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 
 class MuseumHallMap extends StatelessWidget {
-  const MuseumHallMap({Key? key}) : super(key: key);
+  final bool mapPositionInInit;
+
+  const MuseumHallMap({Key? key, required this.mapPositionInInit})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +19,12 @@ class MuseumHallMap extends StatelessWidget {
         'map/hall_map.json',
         forceTileSize: Size(tileSize, tileSize),
         objectsBuilder: {
-          'taylor': (properties) => CharacterTaylor(properties.position),
+          'taylor_1': (properties) => mapPositionInInit
+              ? CharacterTaylor(properties.position)
+              : NullItem(properties.position),
+          'taylor_2': (properties) => mapPositionInInit
+              ? NullItem(properties.position)
+              : CharacterTaylor(properties.position),
           'leave_museum': (properties) => LeaveMuseum(properties.position),
         },
       ),
