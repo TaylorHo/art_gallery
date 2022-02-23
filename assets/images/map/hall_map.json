@@ -51,8 +51,19 @@
                  "type":"",
                  "visible":true,
                  "width":16,
-                 "x":340.666666666667,
-                 "y":933.666666666667
+                 "x":335,
+                 "y":911.333333333334
+                }, 
+                {
+                 "height":4.33333333333337,
+                 "id":2,
+                 "name":"leave_museum",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":127,
+                 "x":256.333333333333,
+                 "y":955.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -61,7 +72,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":2,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",

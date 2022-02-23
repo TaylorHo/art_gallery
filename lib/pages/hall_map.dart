@@ -1,3 +1,4 @@
+import 'package:art_gallery/characters/items/leave_museum.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/taylor.dart';
 import 'package:art_gallery/main.dart';
@@ -15,6 +16,7 @@ class MuseumHallMap extends StatelessWidget {
         forceTileSize: Size(tileSize, tileSize),
         objectsBuilder: {
           'taylor': (properties) => CharacterTaylor(properties.position),
+          'leave_museum': (properties) => LeaveMuseum(properties.position),
         },
       ),
       joystick: Joystick(
@@ -27,7 +29,12 @@ class MuseumHallMap extends StatelessWidget {
         moveOnlyMapArea: true,
         smoothCameraEnabled: true,
       ),
-      player: CharacterJulia(Vector2(920, 2700)),
+      player: CharacterJulia(Vector2(900, 2660)),
+      onReady: (gameReady) async {
+        await Future.delayed(const Duration(seconds: 2), () {
+          adviceShowed = false;
+        });
+      },
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:art_gallery/pages/exterior_map.dart';
 import 'package:flutter/material.dart';
 
 double tileSize = 48;
+bool adviceShowed = false;
 int saySpeed = 18;
 void main() {
   runApp(const MyApp());

@@ -24,7 +24,6 @@ class CharacterJulia extends SimplePlayer with ObjectCollision {
               runDown: JuliaSpriteSheet.runDown,
               runLeft: JuliaSpriteSheet.runLeft),
           speed: 130,
-          initDirection: Direction.up,
         ) {
     setupCollision(CollisionConfig(collisions: [
       CollisionArea.rectangle(size: Vector2(34, 34), align: Vector2(8, 62))

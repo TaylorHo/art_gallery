@@ -19,7 +19,6 @@ class CharacterTaylor extends SimpleEnemy with ObjectCollision {
               runDown: TaylorSpriteSheet.runDown,
               runLeft: TaylorSpriteSheet.runLeft),
           speed: 130,
-          initDirection: Direction.up,
         ) {
     setupCollision(CollisionConfig(collisions: [
       CollisionArea.rectangle(size: Vector2(34, 34), align: Vector2(8, 62))
