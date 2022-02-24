@@ -18,10 +18,13 @@ class EnterRoom1 extends GameDecoration with Sensor {
         adviceShowed = true;
 
         showDialog(
-            context: context,
-            builder: (context) {
-              return const Text('Próxima Sala');
-            });
+          context: context,
+          builder: (context) {
+            return const AlertDialog(
+              content: Text('Próxima Sala'),
+            );
+          },
+        );
       }
     }
   }
