@@ -1,3 +1,5 @@
+import 'package:art_gallery/characters/items/enter_room_1.dart';
+import 'package:art_gallery/characters/items/enter_room_2.dart';
 import 'package:art_gallery/characters/items/leave_museum.dart';
 import 'package:art_gallery/characters/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
@@ -26,6 +28,8 @@ class MuseumHallMap extends StatelessWidget {
               ? NullItem(properties.position)
               : CharacterTaylor(properties.position),
           'leave_museum': (properties) => LeaveMuseum(properties.position),
+          'enter_room_1': (properties) => EnterRoom1(properties.position),
+          'enter_room_2': (properties) => EnterRoom2(properties.position),
         },
       ),
       joystick: Joystick(
