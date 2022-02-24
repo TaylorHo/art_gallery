@@ -42,7 +42,7 @@ class MuseumHallMap extends StatelessWidget {
         moveOnlyMapArea: true,
         smoothCameraEnabled: true,
       ),
-      player: CharacterJulia(Vector2(900, 2660)),
+      player: CharacterJulia(Vector2(900, 2000)),
       onReady: (gameReady) async {
         await Future.delayed(const Duration(seconds: 2), () {
           adviceShowed = false;
