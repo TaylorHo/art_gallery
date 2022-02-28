@@ -1,8 +1,8 @@
 import 'package:art_gallery/characters/animals/butterfly.dart';
 import 'package:art_gallery/characters/animals/frog_green.dart';
 import 'package:art_gallery/characters/animals/frog_yellow.dart';
-import 'package:art_gallery/characters/items/enter_museum.dart';
-import 'package:art_gallery/characters/items/null_item.dart';
+import 'package:art_gallery/items/enter_museum.dart';
+import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/characters/npc/recepcao.dart';

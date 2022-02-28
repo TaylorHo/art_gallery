@@ -1,7 +1,7 @@
-import 'package:art_gallery/characters/items/enter_room_1.dart';
-import 'package:art_gallery/characters/items/enter_room_2.dart';
-import 'package:art_gallery/characters/items/leave_museum.dart';
-import 'package:art_gallery/characters/items/null_item.dart';
+import 'package:art_gallery/items/enter_room_1.dart';
+import 'package:art_gallery/items/enter_room_2.dart';
+import 'package:art_gallery/items/leave_museum.dart';
+import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/taylor.dart';
 import 'package:art_gallery/main.dart';
