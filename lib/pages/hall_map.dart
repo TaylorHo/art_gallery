@@ -1,6 +1,8 @@
-import 'package:art_gallery/items/enter_room_1.dart';
-import 'package:art_gallery/items/enter_room_2.dart';
-import 'package:art_gallery/items/leave_museum.dart';
+import 'package:art_gallery/items/change_room/enter_room_1.dart';
+import 'package:art_gallery/items/change_room/enter_room_2.dart';
+import 'package:art_gallery/items/change_room/leave_museum.dart';
+import 'package:art_gallery/items/museum_items/child_room.dart';
+import 'package:art_gallery/items/museum_items/mesinha_de_pintura.dart';
 import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/taylor.dart';
@@ -30,6 +32,9 @@ class MuseumHallMap extends StatelessWidget {
           'leave_museum': (properties) => LeaveMuseum(properties.position),
           'enter_room_1': (properties) => EnterRoom1(properties.position),
           'enter_room_2': (properties) => EnterRoom2(properties.position),
+          'area_de_criancas': (properties) => ChildRoom(properties.position),
+          'mesinha_de_pintura': (properties) =>
+              MesinhaDePintura(properties.position),
         },
       ),
       joystick: Joystick(

@@ -349,52 +349,8 @@
                  "type":"",
                  "visible":true,
                  "width":3,
-                 "x":160.5,
-                 "y":624.25
-                }, 
-                {
-                 "height":12.75,
-                 "id":30,
-                 "name":"extintor",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":9,
-                 "x":451.6875,
-                 "y":602.125
-                }, 
-                {
-                 "height":12.75,
-                 "id":31,
-                 "name":"extintor",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":9,
-                 "x":179.875,
-                 "y":602.3125
-                }, 
-                {
-                 "height":12.75,
-                 "id":32,
-                 "name":"extintor",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":9,
-                 "x":163.625,
-                 "y":90
-                }, 
-                {
-                 "height":12.75,
-                 "id":33,
-                 "name":"extintor",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":9,
-                 "x":467.590909090909,
-                 "y":90.1704545454545
+                 "x":176.00505050505,
+                 "y":624.025757575758
                 }],
          "opacity":1,
          "type":"objectgroup",
