@@ -19,7 +19,14 @@ class AnimalFrogGreen extends GameDecoration with ObjectCollision, TapGesture {
   void onTap() {
     TalkDialog.show(context, [
       Say(
-          text: [const TextSpan(text: 'Sapinho Verde <3 <3 <3')],
+          text: [
+            const TextSpan(
+              text: 'Sapinho Verde <3 <3 <3',
+              style: TextStyle(
+                fontFamily: 'Normal',
+              ),
+            ),
+          ],
           speed: saySpeed,
           person: SizedBox(
             child: JuliaSpriteSheet.idleRight.asWidget(),

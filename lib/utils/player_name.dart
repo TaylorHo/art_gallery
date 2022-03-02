@@ -18,6 +18,7 @@ void returnName(
         fontSize: 12,
         decoration: TextDecoration.none,
         color: Colors.white,
+        fontFamily: 'Normal',
       ),
     ),
     align: offset,

@@ -61,10 +61,18 @@ class ExteriorMap extends StatelessWidget {
                 Say(
                     text: [
                       const TextSpan(
-                          text: 'YAYYYY!!! Seu aniversário chegou, hihi.\n'),
+                        text: 'YAYYYY!!! Seu aniversário chegou, hihi.\n',
+                        style: TextStyle(
+                          fontFamily: 'Normal',
+                        ),
+                      ),
                       const TextSpan(
-                          text:
-                              'Parabéns meu bem, tudo de melhor para você (inclusive eu), você merece o mundo e muito mais!!'),
+                        text:
+                            'Parabéns meu bem, tudo de melhor para você (inclusive eu), você merece o mundo e muito mais!!',
+                        style: TextStyle(
+                          fontFamily: 'Normal',
+                        ),
+                      ),
                     ],
                     person: SizedBox(
                       child: TaylorSpriteSheet.idleRight.asWidget(),
@@ -75,11 +83,19 @@ class ExteriorMap extends StatelessWidget {
                 Say(
                     text: [
                       const TextSpan(
-                          text:
-                              'Esse é um mini jogo para lembrar do quão incrível você é. Quando digo que merece o mundo, não é brincadeira <3 <3 <3\n'),
+                        text:
+                            'Esse é um mini jogo para lembrar do quão incrível você é. Quando digo que merece o mundo, não é brincadeira <3 <3 <3\n',
+                        style: TextStyle(
+                          fontFamily: 'Normal',
+                        ),
+                      ),
                       const TextSpan(
-                          text:
-                              'De todo modo, vá em frente e descubra o que isso faz, hihi'),
+                        text:
+                            'De todo modo, vá em frente e descubra o que isso faz, hihi',
+                        style: TextStyle(
+                          fontFamily: 'Normal',
+                        ),
+                      ),
                     ],
                     person: SizedBox(
                       child: TaylorSpriteSheet.idleRight.asWidget(),
@@ -90,10 +106,18 @@ class ExteriorMap extends StatelessWidget {
                 Say(
                     text: [
                       const TextSpan(
-                          text:
-                              'Ahhh... Antes que eu esqueça, você pode interagir com praticamente tudo dentro deste jogo.\n'),
+                        text:
+                            'Ahhh... Antes que eu esqueça, você pode interagir com praticamente tudo dentro deste jogo.\n',
+                        style: TextStyle(
+                          fontFamily: 'Normal',
+                        ),
+                      ),
                       const TextSpan(
-                          text: 'Tudo o que você precisa fazer, é clicar :)\n'),
+                        text: 'Tudo o que você precisa fazer, é clicar :)\n',
+                        style: TextStyle(
+                          fontFamily: 'Normal',
+                        ),
+                      ),
                     ],
                     person: SizedBox(
                       child: TaylorSpriteSheet.idleRight.asWidget(),

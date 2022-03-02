@@ -29,8 +29,12 @@ class MesinhaDePintura extends GameDecoration with TapGesture {
         Say(
             text: [
               const TextSpan(
-                  text:
-                      'Essa é uma mesinha que elas podem usar para explorar sua criatividade.\nVocê pode aproveitar e mostrar pra elas depois como é ser uma artista incrível, hihi')
+                text:
+                    'Essa é uma mesinha que elas podem usar para explorar sua criatividade.\nVocê pode aproveitar e mostrar pra elas depois como é ser uma artista incrível, hihi',
+                style: TextStyle(
+                  fontFamily: 'Normal',
+                ),
+              ),
             ],
             person: SizedBox(
               child: TaylorSpriteSheet.idleRight.asWidget(),

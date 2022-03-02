@@ -20,9 +20,13 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.landscapeLeft,
     ]);
 
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Julia\'s Art Gallery',
-      home: ExteriorMap(mapPositionInInit: true),
+      theme: ThemeData(
+        fontFamily: 'Normal',
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const ExteriorMap(mapPositionInInit: true),
     );
   }
 }

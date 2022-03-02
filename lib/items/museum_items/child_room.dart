@@ -26,7 +26,14 @@ class ChildRoom extends GameDecoration with Sensor {
           context,
           [
             Say(
-                text: [const TextSpan(text: 'Espera... o que é isso?')],
+                text: [
+                  const TextSpan(
+                    text: 'Espera... o que é isso?',
+                    style: TextStyle(
+                      fontFamily: 'Normal',
+                    ),
+                  )
+                ],
                 person: SizedBox(
                   child: JuliaSpriteSheet.idleRight.asWidget(),
                   height: 150,
@@ -36,11 +43,19 @@ class ChildRoom extends GameDecoration with Sensor {
             Say(
                 text: [
                   const TextSpan(
-                      text:
-                          'Essa é uma área para as crianças. Elas podem ficar aqui brincando, desenhando ou pintando.\n'),
+                    text:
+                        'Essa é uma área para as crianças. Elas podem ficar aqui brincando, desenhando ou pintando.\n',
+                    style: TextStyle(
+                      fontFamily: 'Normal',
+                    ),
+                  ),
                   const TextSpan(
-                      text:
-                          'O objetivo é que elas desenvolvam sua criatividade, e ainda podem visitar o museu, sempre que quiserem :)'),
+                    text:
+                        'O objetivo é que elas desenvolvam sua criatividade, e ainda podem visitar o museu, sempre que quiserem :)',
+                    style: TextStyle(
+                      fontFamily: 'Normal',
+                    ),
+                  ),
                 ],
                 person: SizedBox(
                   child: TaylorSpriteSheet.idleRight.asWidget(),
@@ -51,8 +66,12 @@ class ChildRoom extends GameDecoration with Sensor {
             Say(
                 text: [
                   const TextSpan(
-                      text:
-                          'Isso não podia faltar, porque sei que você ama ensinar crianças a pintar ou desenhar.\nAdmiro muito isso em você <3')
+                    text:
+                        'Isso não podia faltar, porque sei que você ama ensinar crianças a pintar ou desenhar.\nAdmiro muito isso em você <3',
+                    style: TextStyle(
+                      fontFamily: 'Normal',
+                    ),
+                  ),
                 ],
                 person: SizedBox(
                   child: TaylorSpriteSheet.idleRight.asWidget(),
