@@ -33,9 +33,6 @@ class AnimalButterfly extends SimpleEnemy
           text: [
             const TextSpan(
               text: 'Borboleta <3 <3 <3',
-              style: TextStyle(
-                fontFamily: 'Normal',
-              ),
             ),
           ],
           speed: saySpeed,

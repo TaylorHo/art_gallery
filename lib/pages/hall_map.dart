@@ -57,7 +57,6 @@ class MuseumHallMap extends StatelessWidget {
           )),
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
-        smoothCameraEnabled: true,
       ),
       player: CharacterJulia(Vector2(900, 2000)),
       onReady: (gameReady) async {

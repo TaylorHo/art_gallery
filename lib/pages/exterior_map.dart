@@ -47,7 +47,6 @@ class ExteriorMap extends StatelessWidget {
       ),
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
-        smoothCameraEnabled: true,
       ),
       player: CharacterJulia(
         mapPositionInInit ? Vector2(1880, 2200) : Vector2(1880, 300),
@@ -62,16 +61,10 @@ class ExteriorMap extends StatelessWidget {
                     text: [
                       const TextSpan(
                         text: 'YAYYYY!!! Seu aniversário chegou, hihi.\n',
-                        style: TextStyle(
-                          fontFamily: 'Normal',
-                        ),
                       ),
                       const TextSpan(
                         text:
                             'Parabéns meu bem, tudo de melhor para você (inclusive eu), você merece o mundo e muito mais!!',
-                        style: TextStyle(
-                          fontFamily: 'Normal',
-                        ),
                       ),
                     ],
                     person: SizedBox(
@@ -85,16 +78,10 @@ class ExteriorMap extends StatelessWidget {
                       const TextSpan(
                         text:
                             'Esse é um mini jogo para lembrar do quão incrível você é. Quando digo que merece o mundo, não é brincadeira <3 <3 <3\n',
-                        style: TextStyle(
-                          fontFamily: 'Normal',
-                        ),
                       ),
                       const TextSpan(
                         text:
                             'De todo modo, vá em frente e descubra o que isso faz, hihi',
-                        style: TextStyle(
-                          fontFamily: 'Normal',
-                        ),
                       ),
                     ],
                     person: SizedBox(
@@ -108,15 +95,9 @@ class ExteriorMap extends StatelessWidget {
                       const TextSpan(
                         text:
                             'Ahhh... Antes que eu esqueça, você pode interagir com praticamente tudo dentro deste jogo.\n',
-                        style: TextStyle(
-                          fontFamily: 'Normal',
-                        ),
                       ),
                       const TextSpan(
                         text: 'Tudo o que você precisa fazer, é clicar :)\n',
-                        style: TextStyle(
-                          fontFamily: 'Normal',
-                        ),
                       ),
                     ],
                     person: SizedBox(

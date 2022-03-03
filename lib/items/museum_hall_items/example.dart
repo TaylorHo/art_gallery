@@ -33,9 +33,6 @@ class MaterialDePintura extends GameDecoration with TapGesture, Sensor {
             text: [
               const TextSpan(
                 text: 'Texto',
-                style: TextStyle(
-                  fontFamily: 'Normal',
-                ),
               ),
             ],
             person: SizedBox(

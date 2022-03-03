@@ -1,11 +1,17 @@
 import 'package:art_gallery/pages/exterior_map.dart';
+import 'package:bonfire/bonfire.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 double tileSize = 48;
 bool adviceShowed = false;
 int saySpeed = 18;
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (!kIsWeb) {
+    await Flame.device.setLandscape();
+    await Flame.device.fullScreen();
+  }
   runApp(const MyApp());
 }
 
@@ -15,18 +21,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-    ]);
-
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Julia\'s Art Gallery',
-      theme: ThemeData(
-        fontFamily: 'Normal',
-      ),
       debugShowCheckedModeBanner: false,
-      home: const ExteriorMap(mapPositionInInit: true),
+      home: ExteriorMap(mapPositionInInit: true),
     );
   }
 }

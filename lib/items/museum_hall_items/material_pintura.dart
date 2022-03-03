@@ -30,9 +30,6 @@ class MaterialDePintura extends GameDecoration with TapGesture {
             text: [
               const TextSpan(
                 text: 'E mais material de pintura, heheh\nQuanto mais, melhor.',
-                style: TextStyle(
-                  fontFamily: 'Normal',
-                ),
               ),
             ],
             person: SizedBox(

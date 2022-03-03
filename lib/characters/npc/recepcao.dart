@@ -33,15 +33,9 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
                   text: [
                     const TextSpan(
                       text: 'Ahhh, vocês chegaram!\n',
-                      style: TextStyle(
-                        fontFamily: 'Normal',
-                      ),
                     ),
                     const TextSpan(
                       text: 'Estava esperando por vocês!\n',
-                      style: TextStyle(
-                        fontFamily: 'Normal',
-                      ),
                     ),
                   ],
                   person: SizedBox(
@@ -55,16 +49,10 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
                     const TextSpan(
                       text:
                           'A pedido do Sr. Taylor, preparamos uma exposição de arte dentro deste museu, exclusivamente para a Srta. Júlia.\n',
-                      style: TextStyle(
-                        fontFamily: 'Normal',
-                      ),
                     ),
                     const TextSpan(
                       text:
                           'As obras que estão expostas são surpresa, mas você está livre para entrar e ver por si mesma :)\n',
-                      style: TextStyle(
-                        fontFamily: 'Normal',
-                      ),
                     ),
                   ],
                   person: SizedBox(

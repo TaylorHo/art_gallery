@@ -31,9 +31,6 @@ class BrinquedosSeparados extends GameDecoration with TapGesture {
               const TextSpan(
                 text:
                     'Brinquedos não poderiam faltar. Ser artista é se divertir no processo, mas descansar um pouco sempre faz bem, e eles precisam aprender isso desde cedo.',
-                style: TextStyle(
-                  fontFamily: 'Normal',
-                ),
               ),
             ],
             person: SizedBox(

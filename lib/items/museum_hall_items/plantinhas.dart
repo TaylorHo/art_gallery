@@ -31,9 +31,6 @@ class CanteirosDePlantinhas extends GameDecoration with TapGesture {
               const TextSpan(
                 text:
                     'E aqui estão as plantinhas, sempre muito bem cuidadas, hihi',
-                style: TextStyle(
-                  fontFamily: 'Normal',
-                ),
               ),
             ],
             person: SizedBox(

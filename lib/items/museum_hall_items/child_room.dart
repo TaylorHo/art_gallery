@@ -29,9 +29,6 @@ class ChildRoom extends GameDecoration with Sensor {
                 text: [
                   const TextSpan(
                     text: 'Espera... o que é isso?',
-                    style: TextStyle(
-                      fontFamily: 'Normal',
-                    ),
                   )
                 ],
                 person: SizedBox(
@@ -45,16 +42,10 @@ class ChildRoom extends GameDecoration with Sensor {
                   const TextSpan(
                     text:
                         'Essa é uma área para as crianças. Elas podem ficar aqui brincando, desenhando ou pintando.\n',
-                    style: TextStyle(
-                      fontFamily: 'Normal',
-                    ),
                   ),
                   const TextSpan(
                     text:
                         'O objetivo é que elas desenvolvam sua criatividade, e ainda podem visitar o museu, sempre que quiserem :)',
-                    style: TextStyle(
-                      fontFamily: 'Normal',
-                    ),
                   ),
                 ],
                 person: SizedBox(
@@ -68,9 +59,6 @@ class ChildRoom extends GameDecoration with Sensor {
                   const TextSpan(
                     text:
                         'Isso não podia faltar, porque sei que você ama ensinar crianças a pintar ou desenhar.\nAdmiro muito isso em você <3',
-                    style: TextStyle(
-                      fontFamily: 'Normal',
-                    ),
                   ),
                 ],
                 person: SizedBox(

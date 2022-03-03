@@ -29,7 +29,6 @@ void returnHint(
           color: Colors.white,
           fontSize: 10,
           decoration: TextDecoration.none,
-          fontFamily: 'Normal',
         ),
         textAlign: TextAlign.center,
       ),

@@ -22,9 +22,6 @@ class AnimalFrogGreen extends GameDecoration with ObjectCollision, TapGesture {
           text: [
             const TextSpan(
               text: 'Sapinho Verde <3 <3 <3',
-              style: TextStyle(
-                fontFamily: 'Normal',
-              ),
             ),
           ],
           speed: saySpeed,

@@ -30,9 +30,6 @@ class ExplicacaoPlantinhas extends GameDecoration with TapGesture {
           text: [
             const TextSpan(
               text: 'E aqui tem plantinhas.',
-              style: TextStyle(
-                fontFamily: 'Normal',
-              ),
             ),
           ],
           person: SizedBox(
@@ -47,9 +44,6 @@ class ExplicacaoPlantinhas extends GameDecoration with TapGesture {
             const TextSpan(
               text:
                   'Você sempre amou plantinhas, e admiro muito isso! Faz parte de quem você é, faz parte da sua arte e faz parte da sua essência.',
-              style: TextStyle(
-                fontFamily: 'Normal',
-              ),
             ),
           ],
           person: SizedBox(
