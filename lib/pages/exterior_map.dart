@@ -30,7 +30,8 @@ class ExteriorMap extends StatelessWidget {
                 ? NullItem(properties.position)
                 : CharacterTaylor(properties.position),
             'butterfly': (properties) => AnimalButterfly(properties.position),
-            'enter_museum': (properties) => EnterMuseum(properties.position),
+            'enter_museum': (properties) =>
+                EnterMuseum(properties.position, mapPositionInInit),
             'frog_green': (properties) => AnimalFrogGreen(properties.position),
             'frog_yellow': (properties) =>
                 AnimalFrogYellow(properties.position),
@@ -42,7 +43,7 @@ class ExteriorMap extends StatelessWidget {
         directional: JoystickDirectional(),
         keyboardConfig: KeyboardConfig(
           enable: true,
-          keyboardDirectionalType: KeyboardDirectionalType.arrows,
+          keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows,
         ),
       ),
       cameraConfig: CameraConfig(
@@ -52,7 +53,7 @@ class ExteriorMap extends StatelessWidget {
         mapPositionInInit ? Vector2(1880, 2200) : Vector2(1880, 300),
       ),
       onReady: (gameReady) async {
-        await Future.delayed(const Duration(seconds: 2), () {
+        await Future.delayed(const Duration(seconds: 1), () {
           if (mapPositionInInit) {
             TalkDialog.show(
               context,

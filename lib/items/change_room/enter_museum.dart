@@ -5,7 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
 class EnterMuseum extends GameDecoration with Sensor {
-  EnterMuseum(Vector2 position)
+  final bool alreadyEntered;
+  EnterMuseum(Vector2 position, this.alreadyEntered)
       : super(position: position, size: Vector2(tileSize * 8, 32)) {
     setupSensorArea(
         areaSensor: [CollisionArea.rectangle(size: Vector2(tileSize * 8, 32))]);
@@ -20,7 +21,10 @@ class EnterMuseum extends GameDecoration with Sensor {
 
         Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
-            builder: (context) => const MuseumHallMap(mapPositionInInit: true),
+            builder: (context) => MuseumHallMap(
+              mapPositionInInit: alreadyEntered,
+              positionInEntrance: true,
+            ),
           ),
           (route) => false,
         );
