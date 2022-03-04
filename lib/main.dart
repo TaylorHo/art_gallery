@@ -1,4 +1,5 @@
 import 'package:art_gallery/pages/exterior_map.dart';
+import 'package:art_gallery/pages/hall_map.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Julia\'s Art Gallery',
       debugShowCheckedModeBanner: false,
-      home: ExteriorMap(mapPositionInInit: true),
+      home: MuseumHallMap(mapPositionInInit: true, positionInEntrance: true),
     );
   }
 }

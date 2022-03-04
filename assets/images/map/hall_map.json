@@ -168,7 +168,7 @@
                 {
                  "height":9.75,
                  "id":12,
-                 "name":"sapinho_verde",
+                 "name":"frog_green",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -179,7 +179,7 @@
                 {
                  "height":11,
                  "id":13,
-                 "name":"sapinho_verde",
+                 "name":"frog_green",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -190,7 +190,7 @@
                 {
                  "height":11.25,
                  "id":14,
-                 "name":"sapinho_amarelo",
+                 "name":"frog_yellow",
                  "rotation":0,
                  "type":"",
                  "visible":true,

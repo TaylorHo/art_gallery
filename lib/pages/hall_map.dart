@@ -1,3 +1,5 @@
+import 'package:art_gallery/characters/animals/frog_green.dart';
+import 'package:art_gallery/characters/animals/frog_yellow.dart';
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/items/change_room/enter_room_1.dart';
 import 'package:art_gallery/items/change_room/enter_room_2.dart';
@@ -10,6 +12,7 @@ import 'package:art_gallery/items/museum_hall_items/material_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/mesinha_de_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/plantinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/precisa_mostrar_intro.dart';
+import 'package:art_gallery/items/museum_hall_items/sapinhos.dart';
 import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/taylor.dart';
@@ -46,6 +49,7 @@ class MuseumHallMap extends StatelessWidget {
           'enter_room_2': (properties) => EnterRoom2(properties.position),
           'area_de_criancas': (properties) => ChildRoom(properties.position),
           'intro_museu': (properties) => IntroMuseu(properties.position),
+          'sapinhos': (properties) => SapinhosNoLaguinho(properties.position),
           'precisa_mostrar_intro': (properties) =>
               PrecisaMostrarIntro(properties.position),
           'plantinhas': (properties) =>
@@ -58,6 +62,8 @@ class MuseumHallMap extends StatelessWidget {
               BrinquedosSeparados(properties.position),
           'mesinha_de_pintura': (properties) =>
               MesinhaDePintura(properties.position),
+          'frog_green': (properties) => AnimalFrogGreen(properties.position),
+          'frog_yellow': (properties) => AnimalFrogYellow(properties.position),
         },
       ),
       joystick: Joystick(
