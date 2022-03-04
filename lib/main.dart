@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 double tileSize = 48;
 bool adviceShowed = false;
+bool museumIntroShowed = false;
 int saySpeed = 18;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

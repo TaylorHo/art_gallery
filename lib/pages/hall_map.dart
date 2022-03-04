@@ -5,9 +5,11 @@ import 'package:art_gallery/items/change_room/leave_museum.dart';
 import 'package:art_gallery/items/museum_hall_items/brinquedos.dart';
 import 'package:art_gallery/items/museum_hall_items/child_room.dart';
 import 'package:art_gallery/items/museum_hall_items/explicacao_plantinhas.dart';
+import 'package:art_gallery/items/museum_hall_items/intro_museu.dart';
 import 'package:art_gallery/items/museum_hall_items/material_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/mesinha_de_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/plantinhas.dart';
+import 'package:art_gallery/items/museum_hall_items/precisa_mostrar_intro.dart';
 import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/taylor.dart';
@@ -23,7 +25,7 @@ class MuseumHallMap extends StatelessWidget {
   const MuseumHallMap({
     Key? key,
     required this.mapPositionInInit,
-    required this.positionInEntrance,
+    this.positionInEntrance = false,
   }) : super(key: key);
 
   @override
@@ -43,6 +45,9 @@ class MuseumHallMap extends StatelessWidget {
           'enter_room_1': (properties) => EnterRoom1(properties.position),
           'enter_room_2': (properties) => EnterRoom2(properties.position),
           'area_de_criancas': (properties) => ChildRoom(properties.position),
+          'intro_museu': (properties) => IntroMuseu(properties.position),
+          'precisa_mostrar_intro': (properties) =>
+              PrecisaMostrarIntro(properties.position),
           'plantinhas': (properties) =>
               CanteirosDePlantinhas(properties.position),
           'explicacao_plantinhas': (properties) =>
@@ -65,6 +70,7 @@ class MuseumHallMap extends StatelessWidget {
         moveOnlyMapArea: true,
       ),
       player: CharacterJulia(Vector2(900, 2000)),
+      showCollisionArea: true,
       onReady: (gameReady) async {
         await Future.delayed(const Duration(milliseconds: 600), () {
           adviceShowed = false;

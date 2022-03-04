@@ -306,7 +306,7 @@
                  "visible":true,
                  "width":30.875,
                  "x":305,
-                 "y":568.25
+                 "y":565.886363636364
                 }, 
                 {
                  "height":19.625,
@@ -351,6 +351,17 @@
                  "width":3,
                  "x":176.00505050505,
                  "y":624.025757575758
+                }, 
+                {
+                 "height":3.28888888888889,
+                 "id":34,
+                 "name":"precisa_mostrar_intro",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":127.959895833333,
+                 "x":256.038257575758,
+                 "y":561.733333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -359,7 +370,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":34,
+ "nextobjectid":35,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.2",
