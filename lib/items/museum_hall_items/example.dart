@@ -25,6 +25,7 @@ class MaterialDePintura extends GameDecoration with TapGesture, Sensor {
 
   @override
   void onTap() {
+    gameRef.player?.stopMoveAlongThePath();
     removeFollower('example');
     TalkDialog.show(
       context,

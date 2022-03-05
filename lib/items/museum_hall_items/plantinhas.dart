@@ -22,6 +22,7 @@ class CanteirosDePlantinhas extends GameDecoration with TapGesture {
 
   @override
   void onTap() {
+    gameRef.player?.stopMoveAlongThePath();
     removeFollower('canteiros_de_plantinhas');
     TalkDialog.show(
       context,

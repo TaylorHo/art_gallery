@@ -4,9 +4,11 @@ import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/items/change_room/enter_room_1.dart';
 import 'package:art_gallery/items/change_room/enter_room_2.dart';
 import 'package:art_gallery/items/change_room/leave_museum.dart';
+import 'package:art_gallery/items/museum_hall_items/biblioteca.dart';
 import 'package:art_gallery/items/museum_hall_items/brinquedos.dart';
 import 'package:art_gallery/items/museum_hall_items/child_room.dart';
 import 'package:art_gallery/items/museum_hall_items/explicacao_plantinhas.dart';
+import 'package:art_gallery/items/museum_hall_items/florzinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/intro_museu.dart';
 import 'package:art_gallery/items/museum_hall_items/material_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/mesinha_de_pintura.dart';
@@ -64,6 +66,12 @@ class MuseumHallMap extends StatelessWidget {
               MesinhaDePintura(properties.position),
           'frog_green': (properties) => AnimalFrogGreen(properties.position),
           'frog_yellow': (properties) => AnimalFrogYellow(properties.position),
+          'florzinhas_1': (properties) =>
+              FlorzinhasNoMuseu(properties.position, '1'),
+          'florzinhas_2': (properties) =>
+              FlorzinhasNoMuseu(properties.position, '2'),
+          'biblioteca': (properties) =>
+              BibliotecaComLivros(properties.position),
         },
       ),
       joystick: Joystick(

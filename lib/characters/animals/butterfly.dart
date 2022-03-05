@@ -28,6 +28,7 @@ class AnimalButterfly extends SimpleEnemy
 
   @override
   void onTap() {
+    gameRef.player?.stopMoveAlongThePath();
     TalkDialog.show(context, [
       Say(
           text: [

@@ -21,6 +21,7 @@ class IntroMuseu extends GameDecoration with TapGesture {
 
   @override
   void onTap() {
+    gameRef.player?.stopMoveAlongThePath();
     removeFollower('intro_museu');
     showMuseumIntroDialog(context);
   }
@@ -36,6 +37,7 @@ class IntroMuseu extends GameDecoration with TapGesture {
 }
 
 void showMuseumIntroDialog(context) {
+  museumIntroShowed = true;
   TalkDialog.show(context, [
     Say(
       text: [
@@ -76,7 +78,5 @@ void showMuseumIntroDialog(context) {
   ], logicalKeyboardKeysToNext: [
     LogicalKeyboardKey.space,
     LogicalKeyboardKey.enter
-  ], onFinish: () {
-    museumIntroShowed = true;
-  });
+  ]);
 }

@@ -22,6 +22,7 @@ class ExplicacaoPlantinhas extends GameDecoration with TapGesture {
 
   @override
   void onTap() {
+    gameRef.player?.stopMoveAlongThePath();
     removeFollower('explicacao_plantinhas');
     TalkDialog.show(
       context,

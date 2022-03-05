@@ -5,17 +5,17 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class SapinhosNoLaguinho extends GameDecoration with TapGesture {
-  SapinhosNoLaguinho(Vector2 position)
-      : super(position: position, size: Vector2(300, 360));
+class BibliotecaComLivros extends GameDecoration with TapGesture {
+  BibliotecaComLivros(Vector2 position)
+      : super(position: position, size: Vector2(254, 180));
 
   @override
   Future<void> onLoad() {
     returnHint(
       context: context,
       target: this,
-      name: 'sapinhos',
-      offset: const Offset(140, 155),
+      name: 'biblioteca',
+      offset: const Offset(108, 86),
     );
     return super.onLoad();
   }
@@ -23,14 +23,16 @@ class SapinhosNoLaguinho extends GameDecoration with TapGesture {
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('sapinhos');
+    removeFollower('biblioteca');
     TalkDialog.show(
       context,
       [
         Say(
           text: [
             const TextSpan(
-              text: 'Mais Sapinhos.\n',
+              text:
+                  'Uma de suas principais formas de expressão, raramente mostrada às outras pessoas: escrita sentimental.\n',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
           ],
           person: SizedBox(
@@ -44,7 +46,15 @@ class SapinhosNoLaguinho extends GameDecoration with TapGesture {
           text: [
             const TextSpan(
               text:
-                  'Eles não são uma forma de expressão, arte criada por você, nem nada desse tipo.\nMas vc ama sapinhos, então óbvio que teriam mais alguns aqui <3',
+                  'Geralmente frases curtas ou então textos em inglês, a escrita da artista consegue provocar os mais diversos sentimentos.\nAs frases e textos são sobre os sentimentos dela ',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+            const TextSpan(
+              text: '(os seus)',
+            ),
+            const TextSpan(
+              text: ', mas é praticamente impossível não se identificar.',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
           ],
           person: SizedBox(

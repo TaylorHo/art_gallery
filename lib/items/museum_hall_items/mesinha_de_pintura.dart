@@ -22,6 +22,7 @@ class MesinhaDePintura extends GameDecoration with TapGesture {
 
   @override
   void onTap() {
+    gameRef.player?.stopMoveAlongThePath();
     removeFollower('mesinha_de_pintura');
     TalkDialog.show(
       context,

@@ -5,17 +5,21 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class BrinquedosSeparados extends GameDecoration with TapGesture {
-  BrinquedosSeparados(Vector2 position)
-      : super(position: position, size: Vector2(256, 68));
+class FlorzinhasNoMuseu extends GameDecoration with TapGesture, Sensor {
+  String flowerID;
+  FlorzinhasNoMuseu(Vector2 position, this.flowerID)
+      : super(position: position, size: Vector2(76, 76)) {
+    setupSensorArea(
+        areaSensor: [CollisionArea.rectangle(size: Vector2(76, 76))]);
+  }
 
   @override
   Future<void> onLoad() {
     returnHint(
       context: context,
       target: this,
-      name: 'brinquedos_separados',
-      offset: const Offset(121, -10),
+      name: 'florzinha_' + flowerID,
+      offset: const Offset(30, 26),
     );
     return super.onLoad();
   }
@@ -23,15 +27,15 @@ class BrinquedosSeparados extends GameDecoration with TapGesture {
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('brinquedos_separados');
+    removeFollower('florzinha_1');
+    removeFollower('florzinha_2');
     TalkDialog.show(
       context,
       [
         Say(
             text: [
               const TextSpan(
-                text:
-                    'Brinquedos não poderiam faltar. Ser artista é se divertir no processo, mas descansar um pouco sempre faz bem, e eles precisam aprender isso desde cedo.',
+                text: 'Texto',
               ),
             ],
             person: SizedBox(
@@ -56,4 +60,7 @@ class BrinquedosSeparados extends GameDecoration with TapGesture {
 
   @override
   void onTapUp(int pointer, Vector2 position) {}
+
+  @override
+  void onContact(GameComponent component) {}
 }
