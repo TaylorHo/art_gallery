@@ -5,21 +5,17 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class FlorzinhasNoMuseu extends GameDecoration with TapGesture, Sensor {
-  String flowerID;
-  FlorzinhasNoMuseu(Vector2 position, this.flowerID)
-      : super(position: position, size: Vector2(76, 76)) {
-    setupSensorArea(
-        areaSensor: [CollisionArea.rectangle(size: Vector2(76, 76))]);
-  }
+class PegarSuquinho extends GameDecoration with TapGesture {
+  PegarSuquinho(Vector2 position)
+      : super(position: position, size: Vector2(72, 132));
 
   @override
   Future<void> onLoad() {
     returnHint(
       context: context,
       target: this,
-      name: 'florzinha_' + flowerID,
-      offset: const Offset(30, 26),
+      name: 'pegar_suquinho',
+      offset: const Offset(28, 20),
     );
     return super.onLoad();
   }
@@ -27,24 +23,14 @@ class FlorzinhasNoMuseu extends GameDecoration with TapGesture, Sensor {
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('florzinha_1');
-    removeFollower('florzinha_2');
+    removeFollower('pegar_suquinho');
     TalkDialog.show(
       context,
       [
         Say(
           text: [
             const TextSpan(
-              text: 'Flores estão entre os itens favoritos da artista ',
-              style: TextStyle(fontStyle: FontStyle.italic),
-            ),
-            const TextSpan(
-              text: '(você, hihi)',
-            ),
-            const TextSpan(
-              text:
-                  ', e de forma simples e direta, ela consegue passar uma mensagem sentimental através das retratações.\n',
-              style: TextStyle(fontStyle: FontStyle.italic),
+              text: 'Máquina de pegar bebidas, yayy\n',
             ),
           ],
           person: SizedBox(
@@ -58,7 +44,7 @@ class FlorzinhasNoMuseu extends GameDecoration with TapGesture, Sensor {
           text: [
             const TextSpan(
               text:
-                  'Entre as obras estão fotografias, pinturas e outros desenhos.\n',
+                  'Pode escolher o que quiser, tem de tudo aqui. Eu vou pegar um suquinho (cheio de açúcar, me deixa)\n',
             ),
           ],
           person: SizedBox(
@@ -84,7 +70,4 @@ class FlorzinhasNoMuseu extends GameDecoration with TapGesture, Sensor {
 
   @override
   void onTapUp(int pointer, Vector2 position) {}
-
-  @override
-  void onContact(GameComponent component) {}
 }

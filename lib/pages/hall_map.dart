@@ -12,6 +12,8 @@ import 'package:art_gallery/items/museum_hall_items/florzinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/intro_museu.dart';
 import 'package:art_gallery/items/museum_hall_items/material_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/mesinha_de_pintura.dart';
+import 'package:art_gallery/items/museum_hall_items/motivo_especial.dart';
+import 'package:art_gallery/items/museum_hall_items/pegar_suquinho.dart';
 import 'package:art_gallery/items/museum_hall_items/plantinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/precisa_mostrar_intro.dart';
 import 'package:art_gallery/items/museum_hall_items/sapinhos.dart';
@@ -66,6 +68,9 @@ class MuseumHallMap extends StatelessWidget {
               MesinhaDePintura(properties.position),
           'frog_green': (properties) => AnimalFrogGreen(properties.position),
           'frog_yellow': (properties) => AnimalFrogYellow(properties.position),
+          'pegar_suquinho': (properties) => PegarSuquinho(properties.position),
+          'motivo_especial': (properties) =>
+              MotivoEspecial(properties.position),
           'florzinhas_1': (properties) =>
               FlorzinhasNoMuseu(properties.position, '1'),
           'florzinhas_2': (properties) =>

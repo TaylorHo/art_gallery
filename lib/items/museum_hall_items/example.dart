@@ -5,8 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class MaterialDePintura extends GameDecoration with TapGesture, Sensor {
-  MaterialDePintura(Vector2 position)
+class ExampleComponent extends GameDecoration with TapGesture, Sensor {
+  ExampleComponent(Vector2 position)
       : super(position: position, size: Vector2(32, 32)) {
     setupSensorArea(
         areaSensor: [CollisionArea.rectangle(size: Vector2(32, 32))]);

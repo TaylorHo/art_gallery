@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 class EnterRoom1 extends GameDecoration with Sensor {
   EnterRoom1(Vector2 position)
-      : super(position: position, size: Vector2(tileSize * 8, 32)) {
+      : super(position: position, size: Vector2(tileSize * 4, 10)) {
     setupSensorArea(
-        areaSensor: [CollisionArea.rectangle(size: Vector2(tileSize * 8, 32))]);
+        areaSensor: [CollisionArea.rectangle(size: Vector2(tileSize * 4, 10))]);
   }
 
   @override
