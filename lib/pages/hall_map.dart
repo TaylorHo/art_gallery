@@ -143,6 +143,26 @@ class MuseumHallMap extends StatelessWidget {
                       width: 100,
                     ),
                     speed: saySpeed),
+                Say(
+                    text: [
+                      const TextSpan(
+                        text:
+                            'Ahhh, só mais uma coisa, quando o texto aparece em ',
+                      ),
+                      const TextSpan(
+                        text: 'itálico',
+                        style: TextStyle(fontStyle: FontStyle.italic),
+                      ),
+                      const TextSpan(
+                        text: ', é pq estou lendo a descrição da obra.',
+                      ),
+                    ],
+                    person: SizedBox(
+                      child: TaylorSpriteSheet.idleRight.asWidget(),
+                      height: 150,
+                      width: 100,
+                    ),
+                    speed: saySpeed),
               ],
               logicalKeyboardKeysToNext: [
                 LogicalKeyboardKey.space,
