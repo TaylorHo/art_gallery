@@ -7,6 +7,7 @@ import 'package:art_gallery/items/change_room/leave_museum.dart';
 import 'package:art_gallery/items/museum_hall_items/biblioteca.dart';
 import 'package:art_gallery/items/museum_hall_items/brinquedos.dart';
 import 'package:art_gallery/items/museum_hall_items/child_room.dart';
+import 'package:art_gallery/items/museum_hall_items/dobraduras.dart';
 import 'package:art_gallery/items/museum_hall_items/explicacao_plantinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/florzinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/intro_museu.dart';
@@ -14,8 +15,12 @@ import 'package:art_gallery/items/museum_hall_items/material_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/mesinha_de_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/motivo_especial.dart';
 import 'package:art_gallery/items/museum_hall_items/pegar_suquinho.dart';
+import 'package:art_gallery/items/museum_hall_items/pequenos_desenhos.dart';
+import 'package:art_gallery/items/museum_hall_items/pinturas_1.dart';
+import 'package:art_gallery/items/museum_hall_items/pinturas_2.dart';
 import 'package:art_gallery/items/museum_hall_items/plantinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/precisa_mostrar_intro.dart';
+import 'package:art_gallery/items/museum_hall_items/principal_obra.dart';
 import 'package:art_gallery/items/museum_hall_items/sapinhos.dart';
 import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
@@ -69,6 +74,12 @@ class MuseumHallMap extends StatelessWidget {
           'frog_green': (properties) => AnimalFrogGreen(properties.position),
           'frog_yellow': (properties) => AnimalFrogYellow(properties.position),
           'pegar_suquinho': (properties) => PegarSuquinho(properties.position),
+          'principal_obra': (properties) => PrincipalObra(properties.position),
+          'pinturas_1': (properties) => Pinturas1(properties.position),
+          'pinturas_2': (properties) => Pinturas2(properties.position),
+          'dobraduras': (properties) => Dobraduras(properties.position),
+          'pequenos_desenhos': (properties) =>
+              PequenosDesenhos(properties.position),
           'motivo_especial': (properties) =>
               MotivoEspecial(properties.position),
           'florzinhas_1': (properties) =>
@@ -89,7 +100,16 @@ class MuseumHallMap extends StatelessWidget {
         moveOnlyMapArea: true,
       ),
       player: CharacterJulia(Vector2(900, 2000)),
-      showCollisionArea: true,
+      progress: Container(
+        color: Colors.black,
+        child: Center(
+          child: SizedBox(
+            child: Image.asset('images/load.png'),
+            width: 124,
+            height: 124,
+          ),
+        ),
+      ),
       onReady: (gameReady) async {
         await Future.delayed(const Duration(milliseconds: 600), () {
           adviceShowed = false;

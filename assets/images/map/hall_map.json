@@ -243,15 +243,15 @@
                  "y":180.333333333333
                 }, 
                 {
-                 "height":53.5,
+                 "height":57.25,
                  "id":19,
-                 "name":"pequenos desenhos",
+                 "name":"pequenos_desenhos",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":92,
-                 "x":497.75,
-                 "y":171.75
+                 "x":498.25,
+                 "y":167.5
                 }, 
                 {
                  "height":47.9527853260869,

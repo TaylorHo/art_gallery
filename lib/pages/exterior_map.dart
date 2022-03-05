@@ -52,6 +52,16 @@ class ExteriorMap extends StatelessWidget {
       player: CharacterJulia(
         mapPositionInInit ? Vector2(1880, 2200) : Vector2(1880, 300),
       ),
+      progress: Container(
+        color: Colors.black,
+        child: Center(
+          child: SizedBox(
+            child: Image.asset('images/load.png'),
+            width: 124,
+            height: 124,
+          ),
+        ),
+      ),
       onReady: (gameReady) async {
         await Future.delayed(const Duration(seconds: 1), () {
           if (mapPositionInInit) {

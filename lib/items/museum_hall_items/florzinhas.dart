@@ -5,13 +5,10 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class FlorzinhasNoMuseu extends GameDecoration with TapGesture, Sensor {
+class FlorzinhasNoMuseu extends GameDecoration with TapGesture {
   String flowerID;
   FlorzinhasNoMuseu(Vector2 position, this.flowerID)
-      : super(position: position, size: Vector2(76, 76)) {
-    setupSensorArea(
-        areaSensor: [CollisionArea.rectangle(size: Vector2(76, 76))]);
-  }
+      : super(position: position, size: Vector2(76, 76));
 
   @override
   Future<void> onLoad() {
@@ -84,7 +81,4 @@ class FlorzinhasNoMuseu extends GameDecoration with TapGesture, Sensor {
 
   @override
   void onTapUp(int pointer, Vector2 position) {}
-
-  @override
-  void onContact(GameComponent component) {}
 }
