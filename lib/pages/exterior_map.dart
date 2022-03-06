@@ -1,6 +1,7 @@
 import 'package:art_gallery/characters/animals/butterfly.dart';
 import 'package:art_gallery/characters/animals/frog_green.dart';
 import 'package:art_gallery/characters/animals/frog_yellow.dart';
+import 'package:art_gallery/interface/player_interface.dart';
 import 'package:art_gallery/items/change_room/enter_museum.dart';
 import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
@@ -62,6 +63,10 @@ class ExteriorMap extends StatelessWidget {
           ),
         ),
       ),
+      initialActiveOverlays: const [PlayerInterface.overlayKey],
+      overlayBuilderMap: {
+        'playerInterface': (context, game) => PlayerInterface(game: game)
+      },
       onReady: (gameReady) async {
         await Future.delayed(const Duration(seconds: 1), () {
           if (mapPositionInInit) {
@@ -85,7 +90,7 @@ class ExteriorMap extends StatelessWidget {
                   ),
                   speed: saySpeed,
                   boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.75),
+                    color: Colors.black.withOpacity(0.65),
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(
                       color: Colors.white.withOpacity(0.5),
@@ -110,7 +115,7 @@ class ExteriorMap extends StatelessWidget {
                   ),
                   speed: saySpeed,
                   boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.75),
+                    color: Colors.black.withOpacity(0.65),
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(
                       color: Colors.white.withOpacity(0.5),
@@ -134,7 +139,7 @@ class ExteriorMap extends StatelessWidget {
                   ),
                   speed: saySpeed,
                   boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.75),
+                    color: Colors.black.withOpacity(0.65),
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(
                       color: Colors.white.withOpacity(0.5),

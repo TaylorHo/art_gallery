@@ -40,7 +40,7 @@ class MaterialDePintura extends GameDecoration with TapGesture {
           ),
           speed: saySpeed,
           boxDecoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.75),
+            color: Colors.black.withOpacity(0.65),
             borderRadius: BorderRadius.circular(10.0),
             border: Border.all(
               color: Colors.white.withOpacity(0.5),

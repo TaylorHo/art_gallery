@@ -1,6 +1,7 @@
 import 'package:art_gallery/characters/animals/frog_green.dart';
 import 'package:art_gallery/characters/animals/frog_yellow.dart';
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
+import 'package:art_gallery/interface/player_interface.dart';
 import 'package:art_gallery/items/change_room/enter_room_1.dart';
 import 'package:art_gallery/items/change_room/enter_room_2.dart';
 import 'package:art_gallery/items/change_room/leave_museum.dart';
@@ -110,6 +111,10 @@ class MuseumHallMap extends StatelessWidget {
           ),
         ),
       ),
+      initialActiveOverlays: const [PlayerInterface.overlayKey],
+      overlayBuilderMap: {
+        'playerInterface': (context, game) => PlayerInterface(game: game)
+      },
       onReady: (gameReady) async {
         await Future.delayed(const Duration(milliseconds: 600), () {
           adviceShowed = false;
@@ -134,7 +139,7 @@ class MuseumHallMap extends StatelessWidget {
                   ),
                   speed: saySpeed,
                   boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.75),
+                    color: Colors.black.withOpacity(0.65),
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(
                       color: Colors.white.withOpacity(0.5),
@@ -155,7 +160,7 @@ class MuseumHallMap extends StatelessWidget {
                   ),
                   speed: saySpeed,
                   boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.75),
+                    color: Colors.black.withOpacity(0.65),
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(
                       color: Colors.white.withOpacity(0.5),
@@ -180,7 +185,7 @@ class MuseumHallMap extends StatelessWidget {
                   ),
                   speed: saySpeed,
                   boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.75),
+                    color: Colors.black.withOpacity(0.65),
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(
                       color: Colors.white.withOpacity(0.5),
@@ -208,7 +213,7 @@ class MuseumHallMap extends StatelessWidget {
                   ),
                   speed: saySpeed,
                   boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.75),
+                    color: Colors.black.withOpacity(0.65),
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(
                       color: Colors.white.withOpacity(0.5),

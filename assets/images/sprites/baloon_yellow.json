@@ -6,7 +6,7 @@
  "name":"baloon_yellow",
  "spacing":0,
  "tilecount":10,
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.2",
  "tileheight":16,
  "tiles":[
         {
@@ -56,9 +56,10 @@
                  "duration":150,
                  "tileid":9
                 }],
-         "id":5
+         "id":5,
+         "type":"above"
         }],
  "tilewidth":16,
  "type":"tileset",
- "version":"1.6"
+ "version":"1.8"
 }

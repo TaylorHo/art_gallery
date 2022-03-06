@@ -3,7 +3,6 @@ import 'package:art_gallery/characters/animals/frog_yellow.dart';
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/characters/reactions_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
-import 'package:art_gallery/utils/player_name.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
@@ -31,21 +30,9 @@ class CharacterJulia extends SimplePlayer with ObjectCollision {
   }
 
   @override
-  Future<void> onLoad() {
-    returnName(
-      context: context,
-      target: this,
-      name: 'Júlia',
-    );
-
-    return super.onLoad();
-  }
-
-  @override
   bool onCollision(GameComponent component, bool active) {
     if (component is AnimalFrogGreen || component is AnimalFrogYellow) {
       if (!FollowerWidget.isVisible('viu_sapinho')) {
-        FollowerWidget.remove('júlia');
         FollowerWidget.show(
           identify: 'viu_sapinho',
           context: context,
@@ -64,11 +51,6 @@ class CharacterJulia extends SimplePlayer with ObjectCollision {
       if (timesHeartShowed > 100) {
         timesHeartShowed = 0;
         FollowerWidget.remove('viu_sapinho');
-        returnName(
-          context: context,
-          target: this,
-          name: 'Júlia',
-        );
       } else {
         timesHeartShowed++;
       }

@@ -1,6 +1,5 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
-import 'package:art_gallery/utils/player_name.dart';
 import 'package:bonfire/bonfire.dart';
 
 class CharacterTaylor extends SimpleEnemy with ObjectCollision {
@@ -37,16 +36,5 @@ class CharacterTaylor extends SimpleEnemy with ObjectCollision {
         radiusVision: tileSize * 10);
 
     super.update(dt);
-  }
-
-  @override
-  Future<void> onLoad() {
-    returnName(
-      context: context,
-      target: this,
-      name: 'Taylor',
-    );
-
-    return super.onLoad();
   }
 }
