@@ -41,6 +41,13 @@ class PrincipalObra extends GameDecoration with TapGesture {
             width: 100,
           ),
           speed: saySpeed,
+          boxDecoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.75),
+            borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.5),
+            ),
+          ),
         ),
         Say(
           text: [
@@ -56,6 +63,13 @@ class PrincipalObra extends GameDecoration with TapGesture {
             width: 100,
           ),
           speed: saySpeed,
+          boxDecoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.75),
+            borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.5),
+            ),
+          ),
         ),
       ],
       logicalKeyboardKeysToNext: [

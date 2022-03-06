@@ -37,6 +37,13 @@ class AnimalButterfly extends SimpleEnemy
             ),
           ],
           speed: saySpeed,
+          boxDecoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.75),
+            borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.5),
+            ),
+          ),
           person: SizedBox(
             child: JuliaSpriteSheet.idleRight.asWidget(),
             width: 100,
