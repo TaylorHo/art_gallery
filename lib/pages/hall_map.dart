@@ -118,71 +118,75 @@ class MuseumHallMap extends StatelessWidget {
               context,
               [
                 Say(
-                    text: [
-                      const TextSpan(
-                        text: 'Ok, vamos lá...\n',
-                      ),
-                      const TextSpan(
-                        text:
-                            'Aqui dentro do museu você pode interagir com as coisas de duas formas: clicando ou encostando com seu player.',
-                      ),
-                    ],
-                    person: SizedBox(
-                      child: TaylorSpriteSheet.idleRight.asWidget(),
-                      height: 150,
-                      width: 100,
+                  text: [
+                    const TextSpan(
+                      text: 'Ok, vamos lá...\n',
                     ),
-                    speed: saySpeed),
+                    const TextSpan(
+                      text:
+                          'Aqui dentro do museu você pode interagir com as coisas de duas formas: clicando ou encostando com seu player.',
+                    ),
+                  ],
+                  person: SizedBox(
+                    child: TaylorSpriteSheet.idleRight.asWidget(),
+                    height: 150,
+                    width: 100,
+                  ),
+                  speed: saySpeed,
+                ),
                 Say(
-                    text: [
-                      const TextSpan(
-                        text:
-                            'Os itens que tiverem (?) são de clicar.\nAgora os de encostar com o personagem, não tem nenhuma dica, você vai ter que descobrir...',
-                      ),
-                    ],
-                    person: SizedBox(
-                      child: TaylorSpriteSheet.idleRight.asWidget(),
-                      height: 150,
-                      width: 100,
+                  text: [
+                    const TextSpan(
+                      text:
+                          'Os itens que tiverem (?) são de clicar.\nAgora os de encostar com o personagem, não tem nenhuma dica, você vai ter que descobrir...',
                     ),
-                    speed: saySpeed),
+                  ],
+                  person: SizedBox(
+                    child: TaylorSpriteSheet.idleRight.asWidget(),
+                    height: 150,
+                    width: 100,
+                  ),
+                  speed: saySpeed,
+                ),
                 Say(
-                    text: [
-                      const TextSpan(
-                        text:
-                            'Lembra do sapinho? O contexto é o mesmo, só precisa encostar com o player.\n',
-                      ),
-                      const TextSpan(
-                        text:
-                            'Antes de entrar no hall principal (seguindo reto para a frente), sugiro explorar essa área inicial, hihi :)\n',
-                      ),
-                    ],
-                    person: SizedBox(
-                      child: TaylorSpriteSheet.idleRight.asWidget(),
-                      height: 150,
-                      width: 100,
+                  text: [
+                    const TextSpan(
+                      text:
+                          'Lembra do sapinho? O contexto é o mesmo, só precisa encostar com o player.\n',
                     ),
-                    speed: saySpeed),
+                    const TextSpan(
+                      text:
+                          'Antes de entrar no hall principal (seguindo reto para a frente), sugiro explorar essa área inicial, hihi :)\n',
+                    ),
+                  ],
+                  person: SizedBox(
+                    child: TaylorSpriteSheet.idleRight.asWidget(),
+                    height: 150,
+                    width: 100,
+                  ),
+                  speed: saySpeed,
+                ),
                 Say(
-                    text: [
-                      const TextSpan(
-                        text:
-                            'Ahhh, só mais uma coisa, quando o texto aparece em ',
-                      ),
-                      const TextSpan(
-                        text: 'itálico',
-                        style: TextStyle(fontStyle: FontStyle.italic),
-                      ),
-                      const TextSpan(
-                        text: ', é pq estou lendo a descrição da obra.',
-                      ),
-                    ],
-                    person: SizedBox(
-                      child: TaylorSpriteSheet.idleRight.asWidget(),
-                      height: 150,
-                      width: 100,
+                  text: [
+                    const TextSpan(
+                      text:
+                          'Ahhh, só mais uma coisa, quando o texto aparece em ',
                     ),
-                    speed: saySpeed),
+                    const TextSpan(
+                      text: 'itálico',
+                      style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                    const TextSpan(
+                      text: ', é pq estou lendo a descrição da obra.',
+                    ),
+                  ],
+                  person: SizedBox(
+                    child: TaylorSpriteSheet.idleRight.asWidget(),
+                    height: 150,
+                    width: 100,
+                  ),
+                  speed: saySpeed,
+                ),
               ],
               logicalKeyboardKeysToNext: [
                 LogicalKeyboardKey.space,

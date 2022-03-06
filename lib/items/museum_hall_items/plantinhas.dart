@@ -28,18 +28,19 @@ class CanteirosDePlantinhas extends GameDecoration with TapGesture {
       context,
       [
         Say(
-            text: [
-              const TextSpan(
-                text:
-                    'E aqui estão as plantinhas, sempre muito bem cuidadas, hihi',
-              ),
-            ],
-            person: SizedBox(
-              child: TaylorSpriteSheet.idleRight.asWidget(),
-              height: 150,
-              width: 100,
+          text: [
+            const TextSpan(
+              text:
+                  'E aqui estão as plantinhas, sempre muito bem cuidadas, hihi',
             ),
-            speed: saySpeed),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
       ],
       logicalKeyboardKeysToNext: [
         LogicalKeyboardKey.space,

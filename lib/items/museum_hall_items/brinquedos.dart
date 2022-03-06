@@ -28,18 +28,19 @@ class BrinquedosSeparados extends GameDecoration with TapGesture {
       context,
       [
         Say(
-            text: [
-              const TextSpan(
-                text:
-                    'Brinquedos não poderiam faltar. Ser artista é se divertir no processo, mas descansar um pouco sempre faz bem, e eles precisam aprender isso desde cedo.',
-              ),
-            ],
-            person: SizedBox(
-              child: TaylorSpriteSheet.idleRight.asWidget(),
-              height: 150,
-              width: 100,
+          text: [
+            const TextSpan(
+              text:
+                  'Brinquedos não poderiam faltar. Ser artista é se divertir no processo, mas descansar um pouco sempre faz bem, e eles precisam aprender isso desde cedo.',
             ),
-            speed: saySpeed),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
       ],
       logicalKeyboardKeysToNext: [
         LogicalKeyboardKey.space,

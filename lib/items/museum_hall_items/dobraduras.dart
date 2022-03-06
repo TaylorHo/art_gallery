@@ -28,17 +28,34 @@ class Dobraduras extends GameDecoration with TapGesture {
       context,
       [
         Say(
-            text: [
-              const TextSpan(
-                text: 'Texto',
-              ),
-            ],
-            person: SizedBox(
-              child: TaylorSpriteSheet.idleRight.asWidget(),
-              height: 150,
-              width: 100,
+          text: [
+            const TextSpan(
+              text:
+                  'Além das obras consideradas "comuns", a artista conta com habilidades fascinantes na criação de dobraduras, origamis e outos objetos, como caixinhas com formatos diferentes ou enfeiteis feitos à mão.\n',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
-            speed: saySpeed),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
+        Say(
+          text: [
+            const TextSpan(
+              text:
+                  'Qualquer pessoa ficaria extremamente feliz de ganhar uma das caixinhas feitas por você, hihi\nEu sempre guardo, são muito especiais, além de incrivelmente bem feitas.\n',
+            ),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
       ],
       logicalKeyboardKeysToNext: [
         LogicalKeyboardKey.space,

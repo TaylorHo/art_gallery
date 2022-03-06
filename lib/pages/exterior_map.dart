@@ -69,54 +69,57 @@ class ExteriorMap extends StatelessWidget {
               context,
               [
                 Say(
-                    text: [
-                      const TextSpan(
-                        text: 'YAYYYY!!! Seu aniversário chegou, hihi.\n',
-                      ),
-                      const TextSpan(
-                        text:
-                            'Parabéns meu bem, tudo de melhor para você (inclusive eu), você merece o mundo e muito mais!!',
-                      ),
-                    ],
-                    person: SizedBox(
-                      child: TaylorSpriteSheet.idleRight.asWidget(),
-                      height: 150,
-                      width: 100,
+                  text: [
+                    const TextSpan(
+                      text: 'YAYYYY!!! Seu aniversário chegou, hihi.\n',
                     ),
-                    speed: saySpeed),
+                    const TextSpan(
+                      text:
+                          'Parabéns meu bem, tudo de melhor para você (inclusive eu), você merece o mundo e muito mais!!',
+                    ),
+                  ],
+                  person: SizedBox(
+                    child: TaylorSpriteSheet.idleRight.asWidget(),
+                    height: 150,
+                    width: 100,
+                  ),
+                  speed: saySpeed,
+                ),
                 Say(
-                    text: [
-                      const TextSpan(
-                        text:
-                            'Esse é um mini jogo para lembrar do quão incrível você é. Quando digo que merece o mundo, não é brincadeira <3 <3 <3\n',
-                      ),
-                      const TextSpan(
-                        text:
-                            'De todo modo, vá em frente e descubra o que isso faz, hihi',
-                      ),
-                    ],
-                    person: SizedBox(
-                      child: TaylorSpriteSheet.idleRight.asWidget(),
-                      height: 150,
-                      width: 100,
+                  text: [
+                    const TextSpan(
+                      text:
+                          'Esse é um mini jogo para lembrar do quão incrível você é. Quando digo que merece o mundo, não é brincadeira <3 <3 <3\n',
                     ),
-                    speed: saySpeed),
+                    const TextSpan(
+                      text:
+                          'De todo modo, vá em frente e descubra o que isso faz, hihi',
+                    ),
+                  ],
+                  person: SizedBox(
+                    child: TaylorSpriteSheet.idleRight.asWidget(),
+                    height: 150,
+                    width: 100,
+                  ),
+                  speed: saySpeed,
+                ),
                 Say(
-                    text: [
-                      const TextSpan(
-                        text:
-                            'Ahhh... Antes que eu esqueça, você pode interagir com praticamente tudo dentro deste jogo.\n',
-                      ),
-                      const TextSpan(
-                        text: 'Tudo o que você precisa fazer, é clicar :)\n',
-                      ),
-                    ],
-                    person: SizedBox(
-                      child: TaylorSpriteSheet.idleRight.asWidget(),
-                      height: 150,
-                      width: 100,
+                  text: [
+                    const TextSpan(
+                      text:
+                          'Ahhh... Antes que eu esqueça, você pode interagir com praticamente tudo dentro deste jogo.\n',
                     ),
-                    speed: saySpeed),
+                    const TextSpan(
+                      text: 'Tudo o que você precisa fazer, é clicar :)\n',
+                    ),
+                  ],
+                  person: SizedBox(
+                    child: TaylorSpriteSheet.idleRight.asWidget(),
+                    height: 150,
+                    width: 100,
+                  ),
+                  speed: saySpeed,
+                ),
               ],
               logicalKeyboardKeysToNext: [
                 LogicalKeyboardKey.space,

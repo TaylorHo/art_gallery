@@ -28,17 +28,18 @@ class MaterialDePintura extends GameDecoration with TapGesture {
       context,
       [
         Say(
-            text: [
-              const TextSpan(
-                text: 'E mais material de pintura, heheh\nQuanto mais, melhor.',
-              ),
-            ],
-            person: SizedBox(
-              child: TaylorSpriteSheet.idleRight.asWidget(),
-              height: 150,
-              width: 100,
+          text: [
+            const TextSpan(
+              text: 'E mais material de pintura, heheh\nQuanto mais, melhor.',
             ),
-            speed: saySpeed),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
       ],
       logicalKeyboardKeysToNext: [
         LogicalKeyboardKey.space,

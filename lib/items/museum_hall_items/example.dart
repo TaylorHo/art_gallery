@@ -31,17 +31,18 @@ class ExampleComponent extends GameDecoration with TapGesture, Sensor {
       context,
       [
         Say(
-            text: [
-              const TextSpan(
-                text: 'Texto',
-              ),
-            ],
-            person: SizedBox(
-              child: TaylorSpriteSheet.idleRight.asWidget(),
-              height: 150,
-              width: 100,
+          text: [
+            const TextSpan(
+              text: 'Texto',
             ),
-            speed: saySpeed),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
       ],
       logicalKeyboardKeysToNext: [
         LogicalKeyboardKey.space,

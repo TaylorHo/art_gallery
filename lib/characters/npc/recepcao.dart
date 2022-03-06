@@ -30,20 +30,21 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
             context,
             [
               Say(
-                  text: [
-                    const TextSpan(
-                      text: 'Ahhh, vocês chegaram!\n',
-                    ),
-                    const TextSpan(
-                      text: 'Estava esperando por vocês!\n',
-                    ),
-                  ],
-                  person: SizedBox(
-                    child: RecepcionistaSpriteSheet.idleRight.asWidget(),
-                    height: 150,
-                    width: 100,
+                text: [
+                  const TextSpan(
+                    text: 'Ahhh, vocês chegaram!\n',
                   ),
-                  speed: saySpeed),
+                  const TextSpan(
+                    text: 'Estava esperando por vocês!\n',
+                  ),
+                ],
+                person: SizedBox(
+                  child: RecepcionistaSpriteSheet.idleRight.asWidget(),
+                  height: 150,
+                  width: 100,
+                ),
+                speed: saySpeed,
+              ),
               Say(
                   text: [
                     const TextSpan(

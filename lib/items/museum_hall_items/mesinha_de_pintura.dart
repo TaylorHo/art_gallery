@@ -28,18 +28,19 @@ class MesinhaDePintura extends GameDecoration with TapGesture {
       context,
       [
         Say(
-            text: [
-              const TextSpan(
-                text:
-                    'Essa é uma mesinha que elas podem usar para explorar sua criatividade.\nVocê pode aproveitar e mostrar pra elas depois como é ser uma artista incrível, hihi',
-              ),
-            ],
-            person: SizedBox(
-              child: TaylorSpriteSheet.idleRight.asWidget(),
-              height: 150,
-              width: 100,
+          text: [
+            const TextSpan(
+              text:
+                  'Essa é uma mesinha que elas podem usar para explorar sua criatividade.\nVocê pode aproveitar e mostrar pra elas depois como é ser uma artista incrível, hihi',
             ),
-            speed: saySpeed),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
       ],
       logicalKeyboardKeysToNext: [
         LogicalKeyboardKey.space,

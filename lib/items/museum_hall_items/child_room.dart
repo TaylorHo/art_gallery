@@ -26,47 +26,50 @@ class ChildRoom extends GameDecoration with Sensor {
           context,
           [
             Say(
-                text: [
-                  const TextSpan(
-                    text: 'Espera... o que é isso?',
-                  )
-                ],
-                person: SizedBox(
-                  child: JuliaSpriteSheet.idleRight.asWidget(),
-                  height: 150,
-                  width: 100,
-                ),
-                speed: saySpeed),
+              text: [
+                const TextSpan(
+                  text: 'Espera... o que é isso?',
+                )
+              ],
+              person: SizedBox(
+                child: JuliaSpriteSheet.idleRight.asWidget(),
+                height: 150,
+                width: 100,
+              ),
+              speed: saySpeed,
+            ),
             Say(
-                text: [
-                  const TextSpan(
-                    text:
-                        'Essa é uma área para as crianças. Elas podem ficar aqui brincando, desenhando ou pintando.\n',
-                  ),
-                  const TextSpan(
-                    text:
-                        'O objetivo é que elas desenvolvam sua criatividade, e ainda podem visitar o museu, sempre que quiserem :)',
-                  ),
-                ],
-                person: SizedBox(
-                  child: TaylorSpriteSheet.idleRight.asWidget(),
-                  height: 150,
-                  width: 100,
+              text: [
+                const TextSpan(
+                  text:
+                      'Essa é uma área para as crianças. Elas podem ficar aqui brincando, desenhando ou pintando.\n',
                 ),
-                speed: saySpeed),
+                const TextSpan(
+                  text:
+                      'O objetivo é que elas desenvolvam sua criatividade, e ainda podem visitar o museu, sempre que quiserem :)',
+                ),
+              ],
+              person: SizedBox(
+                child: TaylorSpriteSheet.idleRight.asWidget(),
+                height: 150,
+                width: 100,
+              ),
+              speed: saySpeed,
+            ),
             Say(
-                text: [
-                  const TextSpan(
-                    text:
-                        'Isso não podia faltar, porque sei que você ama ensinar crianças a pintar ou desenhar.\nAdmiro muito isso em você <3',
-                  ),
-                ],
-                person: SizedBox(
-                  child: TaylorSpriteSheet.idleRight.asWidget(),
-                  height: 150,
-                  width: 100,
+              text: [
+                const TextSpan(
+                  text:
+                      'Isso não podia faltar, porque sei que você ama ensinar crianças a pintar ou desenhar.\nAdmiro muito isso em você <3',
                 ),
-                speed: saySpeed),
+              ],
+              person: SizedBox(
+                child: TaylorSpriteSheet.idleRight.asWidget(),
+                height: 150,
+                width: 100,
+              ),
+              speed: saySpeed,
+            ),
           ],
           logicalKeyboardKeysToNext: [
             LogicalKeyboardKey.space,

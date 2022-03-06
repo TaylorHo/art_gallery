@@ -56,6 +56,7 @@ class FlorzinhasNoMuseu extends GameDecoration with TapGesture {
             const TextSpan(
               text:
                   'Entre as obras estão fotografias, pinturas e outros desenhos.\n',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
           ],
           person: SizedBox(
