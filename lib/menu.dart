@@ -27,7 +27,7 @@ class _MenuState extends State<Menu> {
             SizedBox(
               height: 100,
               width: 100,
-              child: Image.asset('images/load.png'),
+              child: Image.asset('assets/images/load.png'),
             ),
             const SizedBox(
               height: 34.0,

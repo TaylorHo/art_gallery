@@ -56,7 +56,7 @@ class ExteriorMap extends StatelessWidget {
         color: Colors.black,
         child: Center(
           child: SizedBox(
-            child: Image.asset('images/load.png'),
+            child: Image.asset('assets/images/load.png'),
             width: 124,
             height: 124,
           ),
