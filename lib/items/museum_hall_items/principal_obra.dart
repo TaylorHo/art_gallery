@@ -30,7 +30,24 @@ class PrincipalObra extends GameDecoration with TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: 'Texto',
+              text:
+                  'Esta pode ser considerada a obra mais marcante da artista. Mais de 10 horas de desenho digital, porém ainda inacabada. Quando será que vamos ver a obra pronta?',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
+        Say(
+          text: [
+            const TextSpan(
+              text:
+                  'De toda forma, o traço é muito bem definido, com fios de cabelo feitos um a um, além de uma riqueza de detalhes impressionante. Não sei você, mas espero um dia ver esta obra concluída.',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
           ],
           person: SizedBox(

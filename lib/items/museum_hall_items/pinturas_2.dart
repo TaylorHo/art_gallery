@@ -30,7 +30,9 @@ class Pinturas2 extends GameDecoration with TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: 'Texto',
+              text:
+                  'Pinturas não faltam, podemos assegurar isso. Um talento sem igual, que merece ser mostrado ao mundo.\n',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
           ],
           person: SizedBox(

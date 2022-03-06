@@ -30,7 +30,38 @@ class PequenosDesenhos extends GameDecoration with TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: 'Texto',
+              text:
+                  'A grande maioria das obras são desenhos ou esboços feitos à mão, geralmente em um pequeno pedaço de papel, ápesar de às vezes serem desenhos digitais.\n',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
+        Say(
+          text: [
+            const TextSpan(
+              text:
+                  'Estas são as obras mais numerosas, e mesmo muitas vezes sendo realmente um esboço feito durante uma aula entediante, os traços são firmes, bem definidos e refletem a incrível habilidade da artista.\n',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
+        Say(
+          text: [
+            const TextSpan(
+              text:
+                  'Sinceramente eu preferiria falar muito mais deles, porque são os desenhos que mais me fascinam. Você é incrível, meu amor <3\n',
             ),
           ],
           person: SizedBox(

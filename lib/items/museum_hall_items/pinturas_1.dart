@@ -30,7 +30,37 @@ class Pinturas1 extends GameDecoration with TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: 'Texto',
+              text:
+                  'Para uma artista versada em diversas formas de expressão, pinturas não poderiam faltar.',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
+        Say(
+          text: [
+            const TextSpan(
+              text:
+                  'Diversas obras compõe seu acervo, muitas pouco mostradas ao público em geral, apesar de serem muito bem feitas.\n',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ],
+          person: SizedBox(
+            child: TaylorSpriteSheet.idleRight.asWidget(),
+            height: 150,
+            width: 100,
+          ),
+          speed: saySpeed,
+        ),
+        Say(
+          text: [
+            const TextSpan(
+              text: 'Um talento sem igual, heheh\n',
             ),
           ],
           person: SizedBox(

@@ -1,5 +1,4 @@
 import 'package:art_gallery/pages/exterior_map.dart';
-import 'package:art_gallery/pages/hall_map.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatefulWidget {
@@ -54,9 +53,8 @@ class _MenuState extends State<Menu> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const MuseumHallMap(
+                      builder: (context) => const ExteriorMap(
                         mapPositionInInit: true,
-                        positionInEntrance: true,
                       ),
                     ),
                   );
@@ -73,24 +71,12 @@ class _MenuState extends State<Menu> {
           child: Stack(
             children: <Widget>[
               Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: const <Widget>[
                     Text(
                       'Desenvolvido com amor pelo seu Amor <3',
-                      style: TextStyle(color: Colors.white, fontSize: 12.0),
-                    ),
-                  ],
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Text(
-                      'Explore em busca do prêmio final',
                       style: TextStyle(color: Colors.white, fontSize: 12.0),
                     ),
                   ],
