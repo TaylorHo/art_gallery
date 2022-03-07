@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactDobraduras';
+
 class Dobraduras extends GameDecoration with TapGesture {
   Dobraduras(Vector2 position)
       : super(position: position, size: Vector2(272, 162));

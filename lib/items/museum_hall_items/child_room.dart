@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 bool dialogShowed = false;
+const String interactName = 'interactAreaDeCriancas';
 
 class ChildRoom extends GameDecoration with Sensor {
   ChildRoom(Vector2 position)

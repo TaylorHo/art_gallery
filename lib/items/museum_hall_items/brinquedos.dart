@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactBrinquedos';
+
 class BrinquedosSeparados extends GameDecoration with TapGesture {
   BrinquedosSeparados(Vector2 position)
       : super(position: position, size: Vector2(256, 68));

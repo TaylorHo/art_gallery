@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactFlorzinhas';
+
 class FlorzinhasNoMuseu extends GameDecoration with TapGesture {
   String flowerID;
   FlorzinhasNoMuseu(Vector2 position, this.flowerID)

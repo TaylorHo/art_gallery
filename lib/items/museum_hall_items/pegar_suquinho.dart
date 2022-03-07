@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactPegarSuquinho';
+
 class PegarSuquinho extends GameDecoration with TapGesture {
   PegarSuquinho(Vector2 position)
       : super(position: position, size: Vector2(72, 132));

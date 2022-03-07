@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactExample';
+
 class ExampleComponent extends GameDecoration with TapGesture, Sensor {
   ExampleComponent(Vector2 position)
       : super(position: position, size: Vector2(32, 32)) {

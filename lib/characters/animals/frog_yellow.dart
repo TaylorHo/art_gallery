@@ -4,6 +4,8 @@ import 'package:art_gallery/main.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
+const String interactName = 'interactSapinhoAmarelo';
+
 class AnimalFrogYellow extends GameDecoration with ObjectCollision, TapGesture {
   AnimalFrogYellow(Vector2 position)
       : super.withAnimation(

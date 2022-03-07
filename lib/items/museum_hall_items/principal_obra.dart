@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactPrincipalObra';
+
 class PrincipalObra extends GameDecoration with TapGesture {
   PrincipalObra(Vector2 position)
       : super(position: position, size: Vector2(82, 72));

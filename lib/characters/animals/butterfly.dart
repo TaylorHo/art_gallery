@@ -4,6 +4,8 @@ import 'package:art_gallery/main.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
+const String interactName = 'interactBorboleta';
+
 class AnimalButterfly extends SimpleEnemy
     with ObjectCollision, AutomaticRandomMovement, TapGesture {
   AnimalButterfly(Vector2 position)

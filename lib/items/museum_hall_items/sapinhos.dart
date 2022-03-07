@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactSapinhos';
+
 class SapinhosNoLaguinho extends GameDecoration with TapGesture {
   SapinhosNoLaguinho(Vector2 position)
       : super(position: position, size: Vector2(300, 360));

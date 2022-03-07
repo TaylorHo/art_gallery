@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactExplicacaoPlantinhas';
+
 class ExplicacaoPlantinhas extends GameDecoration with TapGesture {
   ExplicacaoPlantinhas(Vector2 position)
       : super(position: position, size: Vector2(46, 36));

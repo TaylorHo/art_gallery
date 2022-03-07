@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactBiblioteca';
+
 class BibliotecaComLivros extends GameDecoration with TapGesture {
   BibliotecaComLivros(Vector2 position)
       : super(position: position, size: Vector2(254, 180));

@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactMotivoEspecial';
+
 class MotivoEspecial extends GameDecoration with TapGesture {
   MotivoEspecial(Vector2 position)
       : super(position: position, size: Vector2(96, 96));

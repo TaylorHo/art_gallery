@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactPinturas2';
+
 class Pinturas2 extends GameDecoration with TapGesture {
   Pinturas2(Vector2 position)
       : super(position: position, size: Vector2(158, 168));

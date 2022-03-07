@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactRecepcionista';
+
 class CharacterRecepcionista extends GameDecoration with ObjectCollision {
   bool dialogShowed = false;
   CharacterRecepcionista(Vector2 position)

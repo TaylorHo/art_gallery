@@ -5,6 +5,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactPequenosDesenhos';
+
 class PequenosDesenhos extends GameDecoration with TapGesture {
   PequenosDesenhos(Vector2 position)
       : super(position: position, size: Vector2(278, 178));

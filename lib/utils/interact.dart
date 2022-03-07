@@ -16,8 +16,7 @@ List interactNames = <String>[
   'interactPinturas2',
   'interactSapinhos',
   'interactBiblioteca',
-  'interactFlorzinhas1',
-  'interactFlorzinhas2',
+  'interactFlorzinhas',
   'interactPrincipalObra',
   'interactMotivoEspecial',
   'interactPequenosDesenhos',
@@ -25,7 +24,6 @@ List interactNames = <String>[
   'interactDobraduras'
 ];
 List interactValues = <bool>[
-  false,
   false,
   false,
   false,
@@ -76,6 +74,10 @@ void saveInteractedItem(item) {
   var box = Hive.box('interactions');
   box.put(item, true);
   interactValues[interactNames.indexOf(item)] = true;
+}
+
+Future<bool> returnInteractedItem(item) async {
+  return interactValues[interactNames.indexOf(item)];
 }
 
 void resetInteractedItems() {

@@ -4,6 +4,8 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+const String interactName = 'interactIntroMuseu';
+
 class IntroMuseu extends GameDecoration with TapGesture {
   IntroMuseu(Vector2 position)
       : super(position: position, size: Vector2(92, 42));
