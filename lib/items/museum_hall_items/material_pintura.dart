@@ -1,31 +1,41 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/hint.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const String interactName = 'interactMaterialDePintura';
+bool alreaddyTapped = false;
 
 class MaterialDePintura extends GameDecoration with TapGesture {
   MaterialDePintura(Vector2 position)
       : super(position: position, size: Vector2(36, 40));
 
   @override
-  Future<void> onLoad() {
-    returnHint(
-      context: context,
-      target: this,
-      name: 'material_de_pintura',
-      offset: const Offset(10, 5),
-    );
+  Future<void> onLoad() async {
+    bool alreadyInteracted = await returnInteractedItem(interactName);
+    if (alreadyInteracted) {
+      alreaddyTapped = true;
+    } else {
+      returnHint(
+        context: context,
+        target: this,
+        name: 'material_de_pintura',
+        offset: const Offset(10, 5),
+      );
+    }
     return super.onLoad();
   }
 
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('material_de_pintura');
+    if (!alreaddyTapped) {
+      removeFollower('material_de_pintura');
+      saveInteractedItem(interactName);
+    }
     TalkDialog.show(
       context,
       [
@@ -54,6 +64,9 @@ class MaterialDePintura extends GameDecoration with TapGesture {
         LogicalKeyboardKey.space,
         LogicalKeyboardKey.enter
       ],
+      onFinish: () {
+        alreaddyTapped = true;
+      },
     );
   }
 

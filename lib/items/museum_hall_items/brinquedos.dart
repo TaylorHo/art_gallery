@@ -1,31 +1,41 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/hint.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const String interactName = 'interactBrinquedos';
+bool alreaddyTapped = false;
 
 class BrinquedosSeparados extends GameDecoration with TapGesture {
   BrinquedosSeparados(Vector2 position)
       : super(position: position, size: Vector2(256, 68));
 
   @override
-  Future<void> onLoad() {
-    returnHint(
-      context: context,
-      target: this,
-      name: 'brinquedos_separados',
-      offset: const Offset(121, -10),
-    );
+  Future<void> onLoad() async {
+    bool alreadyInteracted = await returnInteractedItem(interactName);
+    if (alreadyInteracted) {
+      alreaddyTapped = true;
+    } else {
+      returnHint(
+        context: context,
+        target: this,
+        name: 'brinquedos_separados',
+        offset: const Offset(121, -10),
+      );
+    }
     return super.onLoad();
   }
 
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('brinquedos_separados');
+    if (!alreaddyTapped) {
+      removeFollower('brinquedos_separados');
+      saveInteractedItem(interactName);
+    }
     TalkDialog.show(
       context,
       [
@@ -55,6 +65,9 @@ class BrinquedosSeparados extends GameDecoration with TapGesture {
         LogicalKeyboardKey.space,
         LogicalKeyboardKey.enter
       ],
+      onFinish: () {
+        alreaddyTapped = true;
+      },
     );
   }
 

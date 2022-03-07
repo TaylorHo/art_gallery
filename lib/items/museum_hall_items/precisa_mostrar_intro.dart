@@ -4,7 +4,6 @@ import 'package:art_gallery/main.dart';
 import 'package:bonfire/bonfire.dart';
 
 bool haveShowedDialog = false;
-const String interactName = 'interactIntroMuseu';
 
 class PrecisaMostrarIntro extends GameDecoration with Sensor {
   PrecisaMostrarIntro(Vector2 position)

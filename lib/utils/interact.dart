@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:art_gallery/main.dart';
 
 List interactNames = <String>[
   'interactSapinhoAmarelo',
@@ -48,25 +49,28 @@ List interactValues = <bool>[
 ];
 
 int totalInteract = interactNames.length;
-int totalInteracted =
-    interactValues.where((element) => element).toList().length;
+int totalInteracted = 0;
+bool loadedGame = false;
 
 Future<void> getInteractedItems() async {
   var box = await Hive.openBox('interactions');
 
-  interactNames.map(
-    (item) => alterValue(
-      item,
-      box,
-      interactNames.indexOf(item),
-    ),
-  );
+  var resultados = interactNames
+      .map((item) => alterValue(item, box, interactNames.indexOf(item)))
+      .toList();
+  interactValues = resultados;
+  totalInteracted = resultados.where((element) => element).toList().length;
+  if (totalInteracted > 0) {
+    loadedGame = true;
+  }
 }
 
-void alterValue(item, box, index) {
-  bool itemValue = box.get(item);
-  if (itemValue) {
-    interactValues[index] = true;
+bool alterValue(item, box, index) {
+  var itemValue = box.get(item);
+  if (itemValue == null || !itemValue) {
+    return false;
+  } else {
+    return true;
   }
 }
 
@@ -74,6 +78,7 @@ void saveInteractedItem(item) {
   var box = Hive.box('interactions');
   box.put(item, true);
   interactValues[interactNames.indexOf(item)] = true;
+  totalInteracted = interactValues.where((element) => element).toList().length;
 }
 
 Future<bool> returnInteractedItem(item) async {
@@ -83,10 +88,15 @@ Future<bool> returnInteractedItem(item) async {
 void resetInteractedItems() {
   var box = Hive.box('interactions');
 
-  interactNames.map((item) => resetInteractedItemByItem(item, box));
+  var resultados = interactNames
+      .map((item) => resetInteractedItemByItem(item, box))
+      .toList();
+  interactValues = resultados;
+  totalInteracted = 0;
+  loadedGame = false;
 }
 
-void resetInteractedItemByItem(item, box) {
+bool resetInteractedItemByItem(item, box) {
   box.put(item, null);
-  interactValues[interactNames.indexOf(item)] = false;
+  return false;
 }

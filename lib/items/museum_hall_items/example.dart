@@ -1,11 +1,13 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/hint.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const String interactName = 'interactExample';
+bool alreaddyTapped = false;
 
 class ExampleComponent extends GameDecoration with TapGesture, Sensor {
   ExampleComponent(Vector2 position)
@@ -15,20 +17,28 @@ class ExampleComponent extends GameDecoration with TapGesture, Sensor {
   }
 
   @override
-  Future<void> onLoad() {
-    returnHint(
-      context: context,
-      target: this,
-      name: 'example',
-      offset: const Offset(12, 5),
-    );
+  Future<void> onLoad() async {
+    bool alreadyInteracted = await returnInteractedItem(interactName);
+    if (alreadyInteracted) {
+      alreaddyTapped = true;
+    } else {
+      returnHint(
+        context: context,
+        target: this,
+        name: 'example',
+        offset: const Offset(12, 5),
+      );
+    }
     return super.onLoad();
   }
 
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('example');
+    if (!alreaddyTapped) {
+      removeFollower('example');
+      saveInteractedItem(interactName);
+    }
     TalkDialog.show(
       context,
       [
@@ -57,6 +67,9 @@ class ExampleComponent extends GameDecoration with TapGesture, Sensor {
         LogicalKeyboardKey.space,
         LogicalKeyboardKey.enter
       ],
+      onFinish: () {
+        alreaddyTapped = true;
+      },
     );
   }
 

@@ -76,7 +76,7 @@ class _PausedInterfaceState extends State<PausedInterface> {
                   'Voltar ao Jogo',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 17.0,
+                    fontSize: 16.0,
                   ),
                 ),
                 onPressed: () {

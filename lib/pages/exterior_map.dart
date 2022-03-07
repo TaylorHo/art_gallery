@@ -10,6 +10,7 @@ import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/characters/npc/recepcao.dart';
 import 'package:art_gallery/characters/taylor.dart';
 import 'package:art_gallery/main.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -72,88 +73,120 @@ class ExteriorMap extends StatelessWidget {
       onReady: (gameReady) async {
         await Future.delayed(const Duration(seconds: 1), () {
           if (mapPositionInInit) {
-            TalkDialog.show(
-              context,
-              [
-                Say(
-                  text: [
-                    const TextSpan(
-                      text: 'YAYYYY!!! Seu aniversário chegou, hihi.\n',
+            if (!loadedGame) {
+              TalkDialog.show(
+                context,
+                [
+                  Say(
+                    text: [
+                      const TextSpan(
+                        text: 'YAYYYY!!! Seu aniversário chegou, hihi.\n',
+                      ),
+                      const TextSpan(
+                        text:
+                            'Parabéns meu bem, tudo de melhor para você (inclusive eu), você merece o mundo e muito mais!!',
+                      ),
+                    ],
+                    person: SizedBox(
+                      child: TaylorSpriteSheet.idleRight.asWidget(),
+                      height: 150,
+                      width: 100,
                     ),
-                    const TextSpan(
-                      text:
-                          'Parabéns meu bem, tudo de melhor para você (inclusive eu), você merece o mundo e muito mais!!',
-                    ),
-                  ],
-                  person: SizedBox(
-                    child: TaylorSpriteSheet.idleRight.asWidget(),
-                    height: 150,
-                    width: 100,
-                  ),
-                  speed: saySpeed,
-                  boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.65),
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(
-                      color: Colors.white.withOpacity(0.5),
-                    ),
-                  ),
-                ),
-                Say(
-                  text: [
-                    const TextSpan(
-                      text:
-                          'Esse é um mini jogo para lembrar do quão incrível você é. Quando digo que merece o mundo, não é brincadeira <3 <3 <3\n',
-                    ),
-                    const TextSpan(
-                      text:
-                          'De todo modo, vá em frente e descubra o que isso faz, hihi',
-                    ),
-                  ],
-                  person: SizedBox(
-                    child: TaylorSpriteSheet.idleRight.asWidget(),
-                    height: 150,
-                    width: 100,
-                  ),
-                  speed: saySpeed,
-                  boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.65),
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(
-                      color: Colors.white.withOpacity(0.5),
+                    speed: saySpeed,
+                    boxDecoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.65),
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.5),
+                      ),
                     ),
                   ),
-                ),
-                Say(
-                  text: [
-                    const TextSpan(
-                      text:
-                          'Ahhh... Antes que eu esqueça, você pode interagir com praticamente tudo dentro deste jogo.\n',
+                  Say(
+                    text: [
+                      const TextSpan(
+                        text:
+                            'Esse é um mini jogo para lembrar do quão incrível você é. Quando digo que merece o mundo, não é brincadeira <3 <3 <3\n',
+                      ),
+                      const TextSpan(
+                        text:
+                            'De todo modo, vá em frente e descubra o que isso faz, hihi',
+                      ),
+                    ],
+                    person: SizedBox(
+                      child: TaylorSpriteSheet.idleRight.asWidget(),
+                      height: 150,
+                      width: 100,
                     ),
-                    const TextSpan(
-                      text: 'Tudo o que você precisa fazer, é clicar :)\n',
+                    speed: saySpeed,
+                    boxDecoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.65),
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.5),
+                      ),
                     ),
-                  ],
-                  person: SizedBox(
-                    child: TaylorSpriteSheet.idleRight.asWidget(),
-                    height: 150,
-                    width: 100,
                   ),
-                  speed: saySpeed,
-                  boxDecoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.65),
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(
-                      color: Colors.white.withOpacity(0.5),
+                  Say(
+                    text: [
+                      const TextSpan(
+                        text:
+                            'Ahhh... Antes que eu esqueça, você pode interagir com praticamente tudo dentro deste jogo.\n',
+                      ),
+                      const TextSpan(
+                        text: 'Tudo o que você precisa fazer, é clicar :)\n',
+                      ),
+                    ],
+                    person: SizedBox(
+                      child: TaylorSpriteSheet.idleRight.asWidget(),
+                      height: 150,
+                      width: 100,
+                    ),
+                    speed: saySpeed,
+                    boxDecoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.65),
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.5),
+                      ),
                     ),
                   ),
-                ),
-              ],
-              logicalKeyboardKeysToNext: [
-                LogicalKeyboardKey.space,
-                LogicalKeyboardKey.enter
-              ],
-            );
+                ],
+                logicalKeyboardKeysToNext: [
+                  LogicalKeyboardKey.space,
+                  LogicalKeyboardKey.enter
+                ],
+              );
+            } else {
+              TalkDialog.show(
+                context,
+                [
+                  Say(
+                    text: [
+                      const TextSpan(
+                        text: 'Bom te ver de volta :)\n',
+                      ),
+                    ],
+                    person: SizedBox(
+                      child: TaylorSpriteSheet.idleRight.asWidget(),
+                      height: 150,
+                      width: 100,
+                    ),
+                    speed: saySpeed,
+                    boxDecoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.65),
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                ],
+                logicalKeyboardKeysToNext: [
+                  LogicalKeyboardKey.space,
+                  LogicalKeyboardKey.enter
+                ],
+              );
+            }
           } else {
             adviceShowed = false;
           }

@@ -1,31 +1,41 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/hint.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const String interactName = 'interactBiblioteca';
+bool alreaddyTapped = false;
 
 class BibliotecaComLivros extends GameDecoration with TapGesture {
   BibliotecaComLivros(Vector2 position)
       : super(position: position, size: Vector2(254, 180));
 
   @override
-  Future<void> onLoad() {
-    returnHint(
-      context: context,
-      target: this,
-      name: 'biblioteca',
-      offset: const Offset(108, 86),
-    );
+  Future<void> onLoad() async {
+    bool alreadyInteracted = await returnInteractedItem(interactName);
+    if (alreadyInteracted) {
+      alreaddyTapped = true;
+    } else {
+      returnHint(
+        context: context,
+        target: this,
+        name: 'biblioteca',
+        offset: const Offset(108, 86),
+      );
+    }
     return super.onLoad();
   }
 
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('biblioteca');
+    if (!alreaddyTapped) {
+      removeFollower('biblioteca');
+      saveInteractedItem(interactName);
+    }
     TalkDialog.show(
       context,
       [
@@ -85,6 +95,9 @@ class BibliotecaComLivros extends GameDecoration with TapGesture {
         LogicalKeyboardKey.space,
         LogicalKeyboardKey.enter
       ],
+      onFinish: () {
+        alreaddyTapped = true;
+      },
     );
   }
 

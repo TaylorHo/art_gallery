@@ -1,7 +1,9 @@
 import 'package:art_gallery/interface/paused_interface.dart';
 import 'package:art_gallery/utils/interact.dart';
+import 'package:art_gallery/main.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'dart:async' as async;
 
 class PlayerInterface extends StatefulWidget {
   static const overlayKey = 'playerInterface';
@@ -13,6 +15,22 @@ class PlayerInterface extends StatefulWidget {
 }
 
 class _PlayerInterfaceState extends State<PlayerInterface> {
+  late async.Timer totalInteractedItems;
+  int interactedItems = 0;
+
+  @override
+  void initState() {
+    totalInteractedItems = async.Timer.periodic(
+        const Duration(milliseconds: 200), _verifyInteractions);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    totalInteractedItems.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,12 +43,19 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text(
-                    '$totalInteracted/$totalInteract',
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.75),
-                      decoration: TextDecoration.none,
-                      fontSize: 32,
+                  SizedBox(
+                    width: 100,
+                    height: 45,
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Text(
+                        '$interactedItems/$totalInteract',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.75),
+                          decoration: TextDecoration.none,
+                          fontSize: 32,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -42,7 +67,7 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
                   builder: (context) {
                     return AlertDialog(
                       content: Text(
-                        '$totalInteracted itens interagidos\n$totalInteract itens para interagir',
+                        '$interactedItems itens interagidos\n$totalInteract itens para interagir',
                         textAlign: TextAlign.center,
                       ),
                     );
@@ -57,13 +82,16 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text(
-                    '||',
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.75),
-                      decoration: TextDecoration.none,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
+                  SizedBox(
+                    width: 100,
+                    height: 45,
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Icon(
+                        Icons.pause,
+                        color: Colors.white.withOpacity(0.75),
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],
@@ -78,5 +106,13 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
         ],
       ),
     );
+  }
+
+  void _verifyInteractions(async.Timer timer) {
+    if (interactedItems != totalInteracted) {
+      setState(() {
+        interactedItems = totalInteracted;
+      });
+    }
   }
 }

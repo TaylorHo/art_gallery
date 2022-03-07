@@ -1,12 +1,14 @@
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 bool dialogShowed = false;
 const String interactName = 'interactAreaDeCriancas';
+bool alreaddyTapped = false;
 
 class ChildRoom extends GameDecoration with Sensor {
   ChildRoom(Vector2 position)
@@ -21,6 +23,10 @@ class ChildRoom extends GameDecoration with Sensor {
     if (!dialogShowed) {
       if (component is CharacterJulia) {
         gameRef.player?.stopMoveAlongThePath();
+
+        if (!alreaddyTapped) {
+          saveInteractedItem(interactName);
+        }
 
         dialogShowed = true;
         TalkDialog.show(
@@ -97,6 +103,9 @@ class ChildRoom extends GameDecoration with Sensor {
             LogicalKeyboardKey.space,
             LogicalKeyboardKey.enter
           ],
+          onFinish: () {
+            alreaddyTapped = true;
+          },
         );
       }
     }

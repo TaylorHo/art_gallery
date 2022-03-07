@@ -1,11 +1,13 @@
 import 'package:art_gallery/characters/npc_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:art_gallery/utils/player_name.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const String interactName = 'interactRecepcionista';
+bool alreaddyTapped = false;
 
 class CharacterRecepcionista extends GameDecoration with ObjectCollision {
   bool dialogShowed = false;
@@ -28,6 +30,9 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
         observed: (player) {
           gameRef.player?.stopMoveAlongThePath();
           dialogShowed = true;
+          if (!alreaddyTapped) {
+            saveInteractedItem(interactName);
+          }
           TalkDialog.show(
             context,
             [
@@ -76,6 +81,9 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
               LogicalKeyboardKey.space,
               LogicalKeyboardKey.enter
             ],
+            onFinish: () {
+              alreaddyTapped = true;
+            },
           );
         },
         radiusVision: tileSize * 3,

@@ -1,31 +1,41 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/hint.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const String interactName = 'interactPlantinhas';
+bool alreaddyTapped = false;
 
 class CanteirosDePlantinhas extends GameDecoration with TapGesture {
   CanteirosDePlantinhas(Vector2 position)
       : super(position: position, size: Vector2(190, 220));
 
   @override
-  Future<void> onLoad() {
-    returnHint(
-      context: context,
-      target: this,
-      name: 'canteiros_de_plantinhas',
-      offset: const Offset(90, 80),
-    );
+  Future<void> onLoad() async {
+    bool alreadyInteracted = await returnInteractedItem(interactName);
+    if (alreadyInteracted) {
+      alreaddyTapped = true;
+    } else {
+      returnHint(
+        context: context,
+        target: this,
+        name: 'canteiros_de_plantinhas',
+        offset: const Offset(90, 80),
+      );
+    }
     return super.onLoad();
   }
 
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('canteiros_de_plantinhas');
+    if (!alreaddyTapped) {
+      removeFollower('canteiros_de_plantinhas');
+      saveInteractedItem(interactName);
+    }
     TalkDialog.show(
       context,
       [
@@ -55,6 +65,9 @@ class CanteirosDePlantinhas extends GameDecoration with TapGesture {
         LogicalKeyboardKey.space,
         LogicalKeyboardKey.enter
       ],
+      onFinish: () {
+        alreaddyTapped = true;
+      },
     );
   }
 

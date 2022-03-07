@@ -1,31 +1,41 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/hint.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const String interactName = 'interactPequenosDesenhos';
+bool alreaddyTapped = false;
 
 class PequenosDesenhos extends GameDecoration with TapGesture {
   PequenosDesenhos(Vector2 position)
       : super(position: position, size: Vector2(278, 178));
 
   @override
-  Future<void> onLoad() {
-    returnHint(
-      context: context,
-      target: this,
-      name: 'pequenos_desenhos',
-      offset: const Offset(128, 76),
-    );
+  Future<void> onLoad() async {
+    bool alreadyInteracted = await returnInteractedItem(interactName);
+    if (alreadyInteracted) {
+      alreaddyTapped = true;
+    } else {
+      returnHint(
+        context: context,
+        target: this,
+        name: 'pequenos_desenhos',
+        offset: const Offset(128, 76),
+      );
+    }
     return super.onLoad();
   }
 
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    removeFollower('pequenos_desenhos');
+    if (!alreaddyTapped) {
+      removeFollower('pequenos_desenhos');
+      saveInteractedItem(interactName);
+    }
     TalkDialog.show(
       context,
       [
@@ -99,6 +109,9 @@ class PequenosDesenhos extends GameDecoration with TapGesture {
         LogicalKeyboardKey.space,
         LogicalKeyboardKey.enter
       ],
+      onFinish: () {
+        alreaddyTapped = true;
+      },
     );
   }
 
