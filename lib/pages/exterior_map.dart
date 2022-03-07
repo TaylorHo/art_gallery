@@ -1,6 +1,7 @@
 import 'package:art_gallery/characters/animals/butterfly.dart';
 import 'package:art_gallery/characters/animals/frog_green.dart';
 import 'package:art_gallery/characters/animals/frog_yellow.dart';
+import 'package:art_gallery/interface/paused_interface.dart';
 import 'package:art_gallery/interface/player_interface.dart';
 import 'package:art_gallery/items/change_room/enter_museum.dart';
 import 'package:art_gallery/items/null_item.dart';
@@ -65,7 +66,8 @@ class ExteriorMap extends StatelessWidget {
       ),
       initialActiveOverlays: const [PlayerInterface.overlayKey],
       overlayBuilderMap: {
-        'playerInterface': (context, game) => PlayerInterface(game: game)
+        'playerInterface': (context, game) => PlayerInterface(game: game),
+        'pausedInterface': (context, game) => PausedInterface(game: game)
       },
       onReady: (gameReady) async {
         await Future.delayed(const Duration(seconds: 1), () {

@@ -1,3 +1,5 @@
+import 'package:art_gallery/interface/paused_interface.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +26,7 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Text(
-                    '0/24',
+                    '$totalInteracted/$totalInteract',
                     style: TextStyle(
                       color: Colors.white.withOpacity(0.75),
                       decoration: TextDecoration.none,
@@ -38,9 +40,9 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
                 showDialog(
                   context: context,
                   builder: (context) {
-                    return const AlertDialog(
+                    return AlertDialog(
                       content: Text(
-                        '0 itens interagidos\n24 itens para interagir',
+                        '$totalInteracted itens interagidos\n$totalInteract itens para interagir',
                         textAlign: TextAlign.center,
                       ),
                     );
@@ -61,13 +63,15 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
                       color: Colors.white.withOpacity(0.75),
                       decoration: TextDecoration.none,
                       fontSize: 32,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
               onTap: () {
                 widget.game.player?.stopMoveAlongThePath();
-                // mostra o menu
+                widget.game.overlays.remove(PlayerInterface.overlayKey);
+                widget.game.overlays.add(PausedInterface.overlayKey);
               },
             ),
           )
