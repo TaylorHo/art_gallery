@@ -11,6 +11,7 @@ import 'package:art_gallery/characters/npc/recepcao.dart';
 import 'package:art_gallery/characters/taylor.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/interact.dart';
+import 'package:art_gallery/utils/sounds.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -71,6 +72,9 @@ class ExteriorMap extends StatelessWidget {
         'pausedInterface': (context, game) => PausedInterface(game: game)
       },
       onReady: (gameReady) async {
+        if (canPlayMusic) {
+          await Sounds.playBackgroundSound();
+        }
         await Future.delayed(const Duration(seconds: 1), () {
           if (mapPositionInInit) {
             if (!loadedGame) {

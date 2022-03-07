@@ -1,5 +1,6 @@
 import 'package:art_gallery/menu.dart';
 import 'package:art_gallery/utils/interact.dart';
+import 'package:art_gallery/utils/sounds.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ Future<void> main() async {
     await Flame.device.setLandscape();
     await Flame.device.fullScreen();
   }
+  await Sounds.initialize();
   await getInteractedItems();
   runApp(const MyApp());
 }
