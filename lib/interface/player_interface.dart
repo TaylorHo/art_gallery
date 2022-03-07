@@ -1,6 +1,5 @@
 import 'package:art_gallery/interface/paused_interface.dart';
 import 'package:art_gallery/utils/interact.dart';
-import 'package:art_gallery/main.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'dart:async' as async;

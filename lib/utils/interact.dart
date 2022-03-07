@@ -1,5 +1,4 @@
 import 'package:hive/hive.dart';
-import 'package:art_gallery/main.dart';
 
 List interactNames = <String>[
   'interactSapinhoAmarelo',
