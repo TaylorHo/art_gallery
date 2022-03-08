@@ -1,6 +1,7 @@
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/hint.dart';
 import 'package:art_gallery/utils/interact.dart';
+import 'package:art_gallery/utils/sounds.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -50,6 +51,7 @@ void showMuseumIntroDialog(context) {
     removeFollower('intro_museu');
     saveInteractedItem(interactName);
   }
+  Sounds.interaction();
   TalkDialog.show(
     context,
     [

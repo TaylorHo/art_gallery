@@ -77,6 +77,7 @@ class ExteriorMap extends StatelessWidget {
         }
         await Future.delayed(const Duration(seconds: 1), () {
           if (mapPositionInInit) {
+            Sounds.interaction();
             if (!loadedGame) {
               TalkDialog.show(
                 context,

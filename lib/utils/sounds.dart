@@ -26,6 +26,10 @@ class Sounds {
     FlameAudio.bgm.dispose();
   }
 
+  static interaction() {
+    FlameAudio.play('sound_interaction.mp3', volume: 0.2);
+  }
+
   static void handlePlayMusic(bool state) async {
     var box = await Hive.openBox('interactions');
     box.put('audio', state);

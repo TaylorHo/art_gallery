@@ -125,6 +125,7 @@ class MuseumHallMap extends StatelessWidget {
         await Future.delayed(const Duration(milliseconds: 600), () {
           adviceShowed = false;
           if (mapPositionInInit) {
+            Sounds.interaction();
             TalkDialog.show(
               context,
               [

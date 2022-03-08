@@ -2,6 +2,7 @@ import 'package:art_gallery/characters/npc_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/interact.dart';
 import 'package:art_gallery/utils/player_name.dart';
+import 'package:art_gallery/utils/sounds.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -33,6 +34,7 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
           if (!alreaddyTapped) {
             saveInteractedItem(interactName);
           }
+          Sounds.interaction();
           TalkDialog.show(
             context,
             [
