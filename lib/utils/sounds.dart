@@ -7,7 +7,7 @@ class Sounds {
   static Future initialize() async {
     var box = await Hive.openBox('interactions');
     var canPlay = box.get('audio');
-    if (canPlay == null || !canPlay) {
+    if (canPlay != null && !canPlay) {
       canPlayMusic = false;
     }
     FlameAudio.bgm.initialize();

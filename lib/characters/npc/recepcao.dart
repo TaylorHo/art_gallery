@@ -62,22 +62,30 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
                 ),
               ),
               Say(
-                  text: [
-                    const TextSpan(
-                      text:
-                          'A pedido do Sr. Taylor, preparamos uma exposição de arte dentro deste museu, exclusivamente para a Srta. Júlia.\n',
-                    ),
-                    const TextSpan(
-                      text:
-                          'As obras que estão expostas são surpresa, mas você está livre para entrar e ver por si mesma :)\n',
-                    ),
-                  ],
-                  person: SizedBox(
-                    child: RecepcionistaSpriteSheet.idleRight.asWidget(),
-                    height: 150,
-                    width: 100,
+                text: [
+                  const TextSpan(
+                    text:
+                        'A pedido do Sr. Taylor, preparamos uma exposição de arte dentro deste museu, exclusivamente para a Srta. Júlia.\n',
                   ),
-                  speed: 1),
+                  const TextSpan(
+                    text:
+                        'As obras que estão expostas são surpresa, mas você está livre para entrar e ver por si mesma :)\n',
+                  ),
+                ],
+                person: SizedBox(
+                  child: RecepcionistaSpriteSheet.idleRight.asWidget(),
+                  height: 150,
+                  width: 100,
+                ),
+                speed: saySpeed,
+                boxDecoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.65),
+                  borderRadius: BorderRadius.circular(10.0),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.5),
+                  ),
+                ),
+              ),
             ],
             logicalKeyboardKeysToNext: [
               LogicalKeyboardKey.space,
