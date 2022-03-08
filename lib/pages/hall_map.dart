@@ -13,6 +13,7 @@ import 'package:art_gallery/items/museum_hall_items/dobraduras.dart';
 import 'package:art_gallery/items/museum_hall_items/explicacao_plantinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/florzinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/intro_museu.dart';
+import 'package:art_gallery/items/museum_hall_items/letter_1.dart';
 import 'package:art_gallery/items/museum_hall_items/material_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/mesinha_de_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/motivo_especial.dart';
@@ -28,6 +29,7 @@ import 'package:art_gallery/items/null_item.dart';
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/taylor.dart';
 import 'package:art_gallery/main.dart';
+import 'package:art_gallery/utils/interact.dart';
 import 'package:art_gallery/utils/sounds.dart';
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
@@ -81,6 +83,9 @@ class MuseumHallMap extends StatelessWidget {
           'pinturas_1': (properties) => Pinturas1(properties.position),
           'pinturas_2': (properties) => Pinturas2(properties.position),
           'dobraduras': (properties) => Dobraduras(properties.position),
+          'premio_especial': (properties) => totalInteract == totalInteracted
+              ? Letter1(properties.position)
+              : NullItem(properties.position),
           'pequenos_desenhos': (properties) =>
               PequenosDesenhos(properties.position),
           'motivo_especial': (properties) =>
