@@ -1,52 +1,21 @@
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
-import 'package:art_gallery/utils/hint.dart';
 import 'package:art_gallery/utils/interact.dart';
-import 'package:art_gallery/utils/last_item.dart';
-import 'package:art_gallery/utils/sounds.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-const String interactName = 'interactMotivoEspecial';
-bool alreaddyTapped = false;
+void isLastItem(BuildContext context) {
+  if (totalInteract == totalInteracted && !lastItemShowed) {
+    lastItemShowed = true;
 
-class MotivoEspecial extends GameDecoration with TapGesture {
-  MotivoEspecial(Vector2 position)
-      : super(position: position, size: Vector2(96, 96));
-
-  @override
-  Future<void> onLoad() async {
-    bool alreadyInteracted = await returnInteractedItem(interactName);
-    if (alreadyInteracted) {
-      alreaddyTapped = true;
-    } else {
-      returnHint(
-        context: context,
-        target: this,
-        name: 'motivo_especial',
-        offset: const Offset(40, 44),
-      );
-    }
-    return super.onLoad();
-  }
-
-  @override
-  void onTap() {
-    gameRef.player?.stopMoveAlongThePath();
-    if (!alreaddyTapped) {
-      removeFollower('motivo_especial');
-      saveInteractedItem(interactName);
-    }
-    Sounds.interaction();
     TalkDialog.show(
       context,
       [
         Say(
           text: [
             const TextSpan(
-              text:
-                  'Ué, que estranho...\nEssa flor não deveria estar aqui...\n',
+              text: 'Você interagiu com todas as obras!!',
             ),
           ],
           person: SizedBox(
@@ -67,7 +36,7 @@ class MotivoEspecial extends GameDecoration with TapGesture {
           text: [
             const TextSpan(
               text:
-                  'Acho que ela está perdida, ou está aqui por algum motivo em especial, vai saber.',
+                  'Eu diria que você terminou o jogo, mas acho que você ainda precisa abrir uma porta, não?',
             ),
           ],
           person: SizedBox(
@@ -89,19 +58,6 @@ class MotivoEspecial extends GameDecoration with TapGesture {
         LogicalKeyboardKey.space,
         LogicalKeyboardKey.enter
       ],
-      onFinish: () {
-        alreaddyTapped = true;
-        isLastItem(context);
-      },
     );
   }
-
-  @override
-  void onTapCancel() {}
-
-  @override
-  void onTapDown(int pointer, Vector2 position) {}
-
-  @override
-  void onTapUp(int pointer, Vector2 position) {}
 }

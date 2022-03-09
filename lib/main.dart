@@ -9,6 +9,7 @@ double tileSize = 48;
 bool adviceShowed = false;
 bool museumIntroShowed = false;
 int saySpeed = 18;
+bool lastItemShowed = false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (!kIsWeb) {
