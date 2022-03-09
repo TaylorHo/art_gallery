@@ -24,7 +24,6 @@ class FinalRoom extends StatelessWidget {
           'final': (properties) => FinalGift(properties.position),
         },
       ),
-      showCollisionArea: true,
       joystick: Joystick(
           directional: JoystickDirectional(),
           keyboardConfig: KeyboardConfig(

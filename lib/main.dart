@@ -10,6 +10,8 @@ bool adviceShowed = false;
 bool museumIntroShowed = false;
 int saySpeed = 18;
 bool lastItemShowed = false;
+bool giftInteracted = false;
+bool finalDialogShowed = false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (!kIsWeb) {

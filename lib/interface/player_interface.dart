@@ -1,5 +1,8 @@
 import 'package:art_gallery/interface/paused_interface.dart';
+import 'package:art_gallery/main.dart';
+import 'package:art_gallery/utils/final_dialog.dart';
 import 'package:art_gallery/utils/interact.dart';
+import 'package:art_gallery/utils/last_item.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'dart:async' as async;
@@ -112,6 +115,11 @@ class _PlayerInterfaceState extends State<PlayerInterface> {
       setState(() {
         interactedItems = totalInteracted;
       });
+    }
+    isLastItem(context);
+    if (giftInteracted && !finalDialogShowed) {
+      finalDialogShowed = true;
+      showFinalDialog(context);
     }
   }
 }

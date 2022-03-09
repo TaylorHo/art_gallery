@@ -1,4 +1,5 @@
 import 'package:art_gallery/pages/exterior_map.dart';
+import 'package:art_gallery/pages/final_room.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatefulWidget {
@@ -53,9 +54,7 @@ class _MenuState extends State<Menu> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ExteriorMap(
-                        mapPositionInInit: true,
-                      ),
+                      builder: (context) => const FinalRoom(),
                     ),
                   );
                 },

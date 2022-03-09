@@ -1,7 +1,7 @@
 import 'package:art_gallery/characters/npc_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/interact.dart';
-import 'package:art_gallery/utils/last_item.dart';
+
 import 'package:art_gallery/utils/player_name.dart';
 import 'package:art_gallery/utils/sounds.dart';
 import 'package:bonfire/bonfire.dart';
@@ -32,9 +32,7 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
         observed: (player) {
           gameRef.player?.stopMoveAlongThePath();
           dialogShowed = true;
-          if (!alreaddyTapped) {
-            saveInteractedItem(interactName);
-          }
+
           Sounds.interaction();
           TalkDialog.show(
             context,
@@ -93,8 +91,10 @@ class CharacterRecepcionista extends GameDecoration with ObjectCollision {
               LogicalKeyboardKey.enter
             ],
             onFinish: () {
-              alreaddyTapped = true;
-              isLastItem(context);
+              if (!alreaddyTapped) {
+                saveInteractedItem(interactName);
+                alreaddyTapped = true;
+              }
             },
           );
         },

@@ -2,7 +2,7 @@ import 'package:art_gallery/characters/animals/animals_sprite_sheet.dart';
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
 import 'package:art_gallery/utils/interact.dart';
-import 'package:art_gallery/utils/last_item.dart';
+
 import 'package:art_gallery/utils/sounds.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +24,7 @@ class AnimalFrogGreen extends GameDecoration with ObjectCollision, TapGesture {
   @override
   void onTap() {
     gameRef.player?.stopMoveAlongThePath();
-    if (!alreaddyTapped) {
-      saveInteractedItem(interactName);
-    }
+
     Sounds.interaction();
     TalkDialog.show(
       context,
@@ -52,8 +50,10 @@ class AnimalFrogGreen extends GameDecoration with ObjectCollision, TapGesture {
             )),
       ],
       onFinish: () {
-        alreaddyTapped = true;
-        isLastItem(context);
+        if (!alreaddyTapped) {
+          saveInteractedItem(interactName);
+          alreaddyTapped = true;
+        }
       },
     );
   }
