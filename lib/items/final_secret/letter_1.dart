@@ -58,7 +58,7 @@ class Letter1 extends GameDecoration with TapGesture {
           text: [
             const TextSpan(
               text:
-                  'Lembra que esta planta aqui do lado tem um "motivo especial"? Então, todas as plantas daqui de dentro têm...',
+                  'Lembra que esta planta aqui do lado tem um "motivo especial"? Então, todas as plantas daqui de dentro, no Hall principal, têm...',
             ),
           ],
           person: SizedBox(
