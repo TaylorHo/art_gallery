@@ -125,7 +125,6 @@ class MuseumHallMap extends StatelessWidget {
               Hint(properties.position, Vector2(56, 56), hint: 'R'),
         },
       ),
-      showCollisionArea: true,
       joystick: Joystick(
           directional: JoystickDirectional(),
           keyboardConfig: KeyboardConfig(
@@ -135,7 +134,9 @@ class MuseumHallMap extends StatelessWidget {
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
       ),
-      player: CharacterJulia(Vector2(900, 2000)),
+      player: CharacterJulia(
+        positionInEntrance ? Vector2(900, 2000) : Vector2(900, 290),
+      ),
       progress: Container(
         color: Colors.black,
         child: Center(

@@ -1,4 +1,5 @@
 import 'package:art_gallery/pages/exterior_map.dart';
+import 'package:art_gallery/pages/final_room.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatefulWidget {

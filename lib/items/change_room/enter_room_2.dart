@@ -1,6 +1,7 @@
 import 'package:art_gallery/characters/julia.dart';
 import 'package:art_gallery/characters/players_sprite_sheet.dart';
 import 'package:art_gallery/main.dart';
+import 'package:art_gallery/pages/final_room.dart';
 import 'package:art_gallery/utils/interact.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,6 @@ class EnterRoom2 extends GameDecoration with Sensor {
   void onContact(GameComponent component) {
     if (!adviceShowed) {
       if (component is CharacterJulia) {
-        FollowerWidget.removeAll();
         adviceShowed = true;
 
         gameRef.player?.stopMoveAlongThePath();
@@ -42,8 +42,15 @@ class EnterRoom2 extends GameDecoration with Sensor {
                             actions: [
                               TextButton(
                                 child: const Text('Ver a sala final'),
-                                onPressed: () => {
+                                onPressed: () {
                                   // puxa a proxima sala
+                                  FollowerWidget.removeAll();
+                                  Navigator.of(context).pushAndRemoveUntil(
+                                    MaterialPageRoute(
+                                      builder: (context) => const FinalRoom(),
+                                    ),
+                                    (route) => false,
+                                  );
                                 },
                               ),
                             ],
@@ -60,11 +67,11 @@ class EnterRoom2 extends GameDecoration with Sensor {
                 actions: <Widget>[
                   TextButton(
                     child: const Text('Cancelar'),
-                    onPressed: () => {
-                      Navigator.pop(context, 'Cancel'),
-                      Future.delayed(const Duration(seconds: 6), () {
+                    onPressed: () async {
+                      Navigator.pop(context, 'Cancel');
+                      await Future.delayed(const Duration(seconds: 6), () {
                         adviceShowed = false;
-                      }),
+                      });
                     },
                   ),
                 ],
@@ -99,8 +106,8 @@ class EnterRoom2 extends GameDecoration with Sensor {
           ], logicalKeyboardKeysToNext: [
             LogicalKeyboardKey.space,
             LogicalKeyboardKey.enter
-          ], onFinish: () {
-            Future.delayed(const Duration(seconds: 6), () {
+          ], onFinish: () async {
+            await Future.delayed(const Duration(seconds: 6), () {
               adviceShowed = false;
             });
           });

@@ -21,9 +21,11 @@ List interactNames = <String>[
   'interactMotivoEspecial',
   'interactPequenosDesenhos',
   'interactPegarSuquinho',
-  'interactDobraduras'
+  'interactDobraduras',
+  'maquiagemArtistica'
 ];
 List interactValues = <bool>[
+  false,
   false,
   false,
   false,
