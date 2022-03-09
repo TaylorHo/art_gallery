@@ -1,1 +1,0 @@
-# Julia's Art Gallery
