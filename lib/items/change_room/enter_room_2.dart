@@ -45,7 +45,6 @@ class EnterRoom2 extends GameDecoration with Sensor {
                                 onPressed: () {
                                   // puxa a proxima sala
                                   FollowerWidget.removeAll();
-                                  Navigator.pop(context, 'Close');
                                   Navigator.of(context).pushAndRemoveUntil(
                                     MaterialPageRoute(
                                       builder: (context) => const FinalRoom(),
