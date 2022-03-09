@@ -6,6 +6,7 @@ import 'package:art_gallery/interface/player_interface.dart';
 import 'package:art_gallery/items/change_room/enter_room_1.dart';
 import 'package:art_gallery/items/change_room/enter_room_2.dart';
 import 'package:art_gallery/items/change_room/leave_museum.dart';
+import 'package:art_gallery/items/final_secret/hint.dart';
 import 'package:art_gallery/items/museum_hall_items/biblioteca.dart';
 import 'package:art_gallery/items/museum_hall_items/brinquedos.dart';
 import 'package:art_gallery/items/museum_hall_items/child_room.dart';
@@ -13,7 +14,7 @@ import 'package:art_gallery/items/museum_hall_items/dobraduras.dart';
 import 'package:art_gallery/items/museum_hall_items/explicacao_plantinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/florzinhas.dart';
 import 'package:art_gallery/items/museum_hall_items/intro_museu.dart';
-import 'package:art_gallery/items/museum_hall_items/letter_1.dart';
+import 'package:art_gallery/items/final_secret/letter_1.dart';
 import 'package:art_gallery/items/museum_hall_items/material_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/mesinha_de_pintura.dart';
 import 'package:art_gallery/items/museum_hall_items/motivo_especial.dart';
@@ -96,8 +97,35 @@ class MuseumHallMap extends StatelessWidget {
               FlorzinhasNoMuseu(properties.position, '2'),
           'biblioteca': (properties) =>
               BibliotecaComLivros(properties.position),
+          'hint_1': (properties) =>
+              Hint(properties.position, Vector2(72, 86), hint: 'M'),
+          'hint_2': (properties) =>
+              Hint(properties.position, Vector2(56, 86), hint: 'E'),
+          'hint_3': (properties) =>
+              Hint(properties.position, Vector2(56, 86), hint: 'U'),
+          'hint_4': (properties) =>
+              Hint(properties.position, Vector2(72, 86), hint: 'E'),
+          'hint_5': (properties) =>
+              Hint(properties.position, Vector2(138, 92), hint: 'T'),
+          'hint_6': (properties) =>
+              Hint(properties.position, Vector2(138, 92), hint: 'E'),
+          'hint_7': (properties) =>
+              Hint(properties.position, Vector2(56, 56), hint: 'R'),
+          'hint_8': (properties) =>
+              Hint(properties.position, Vector2(56, 56), hint: 'N'),
+          'hint_9': (properties) =>
+              Hint(properties.position, Vector2(72, 96), hint: 'O'),
+          'hint_10': (properties) =>
+              Hint(properties.position, Vector2(56, 86), hint: 'A'),
+          'hint_11': (properties) =>
+              Hint(properties.position, Vector2(56, 86), hint: 'M'),
+          'hint_12': (properties) =>
+              Hint(properties.position, Vector2(72, 96), hint: 'O'),
+          'hint_13': (properties) =>
+              Hint(properties.position, Vector2(56, 56), hint: 'R'),
         },
       ),
+      showCollisionArea: true,
       joystick: Joystick(
           directional: JoystickDirectional(),
           keyboardConfig: KeyboardConfig(
